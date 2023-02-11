@@ -37,6 +37,10 @@ body {
   }
 }
 
+.navbar {
+  display: inline;
+}
+
 .navbar a {
   float: left;
   text-align: center;
@@ -44,6 +48,11 @@ body {
   color: #5c3a92;
   text-decoration: none;
   font-size: 17px;
+}
+
+.navbar img {
+  width: 70px;
+  border-radius: 50%;
 }
 
 .navbar a:hover {
