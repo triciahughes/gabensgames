@@ -1,7 +1,7 @@
 import GameItem from "./GameItem";
 
 function SavedGames() {
-    return <div id="savedGames"></div>;
+    return <h1>SAVED GAMES</h1>;
 }
 
 export default SavedGames;

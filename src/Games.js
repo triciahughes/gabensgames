@@ -1,5 +1,5 @@
 function Games() {
-    return <div id="games"></div>;
+    return <h1>GAMES</h1>;
 }
 
 export default Games;
