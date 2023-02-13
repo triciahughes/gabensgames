@@ -49,3 +49,17 @@ body {
 .navbar a:hover {
   background-color: whitesmoke;
 }
+
+.card-body {
+}
+
+.card-title {
+  text-align: center;
+}
+
+.card-text {
+  text-align: center;
+}
+
+.card-Img-Top {
+}
