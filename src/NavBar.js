@@ -1,10 +1,12 @@
+import { NavLink } from "react-router-dom";
+
 function NavBar() {
   return (
     <header>
       <div className="navbar">
-        <a href="javascript:alert('Hello World!');">Games</a>
-        <a href="javascript:alert('Hello World!');">Developers</a>
-        <a>My Saved Games</a>
+        <NavLink to="/games">Games</NavLink>
+        <NavLink to="/developers">Developers</NavLink>
+        <NavLink to="/saved">My Saved Games</NavLink>
       </div>
     </header>
   );

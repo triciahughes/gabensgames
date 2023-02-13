@@ -37,13 +37,23 @@ body {
   }
 }
 
+.navbar {
+  display: inline;
+}
+
 .navbar a {
   float: left;
   text-align: center;
   padding: 12px;
-  color: #5c3a92;
+  /* color: #5c3a92; */
+  color: black;
   text-decoration: none;
   font-size: 17px;
+}
+
+.navbar img {
+  width: 70px;
+  border-radius: 50%;
 }
 
 .navbar a:hover {
