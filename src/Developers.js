@@ -1,7 +1,7 @@
 import DeveloperItem from "./DeveloperItem";
 
 function Developers() {
-    return <div id="developerItem"></div>;
+    return <h1>DEVELOPERS</h1>;
 }
 
 export default Developers;
