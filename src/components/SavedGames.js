@@ -4,9 +4,9 @@ function SavedGames() {
   return (
     <h1>
       SAVED GAMES
-      <div>
+      {/* <div>
         <GameItem />
-      </div>
+      </div> */}
     </h1>
   );
 }

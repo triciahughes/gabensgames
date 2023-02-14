@@ -29,9 +29,13 @@ function App() {
   function handleSearchChange(e) {
     setSearchInput(e.target.value);
   }
-  //////// Search Bar Filtered List ////////
+  //////// Search Bar Filtered Lists ////////
   const filteredGameList = games.filter((game) => {
     return game.name.toLowerCase().includes(searchInput.toLowerCase());
+  });
+
+  const filteredDevList = devs.filter((dev) => {
+    return dev.name.toLowerCase().includes(searchInput.toLowerCase());
   });
 
   return (
@@ -48,7 +52,7 @@ function App() {
           <Games games={filteredGameList} />
         </Route>
         <Route path="/developers">
-          <Developers devs={devs} />
+          <Developers devs={filteredDevList} />
         </Route>
         <Route path="/saved">
           <SavedGames />
