@@ -1,5 +1,7 @@
 import { useState } from "react";
-function GameItem({ game, handleSave, savedGames, setSavedGames }) {
+import { useRouteMatch } from "react-router-dom";
+
+function GameItem({ game, handleSave }) {
   const { name, id, genres, esrb_rating, metacritic, background_image } = game;
   const genreString = Array.from(genres.map((genre) => genre.name)).join(", ");
   const ratingString =
@@ -14,20 +16,23 @@ function GameItem({ game, handleSave, savedGames, setSavedGames }) {
       metacritic: metacritic,
       background_image: background_image,
     };
-    setSavedGames((currentState) => [...currentState, gameData]);
-    handleSave(savedGames);
-    // console.log(gameData);
+
+    fetch("http://localhost:3000/games", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(gameData),
+    });
+
+    handleSave(gameData);
   }
 
   return (
     <li className="cards-item" id={id}>
       <div className="card">
-        <img
-          className="card-image"
-          src={background_image}
-          alt="Card image cap"
-          styles="width:100%"
-        />
+        <img src={background_image} alt="Card image cap" styles="width:100%" />
         <div className="card-content">
           <div className="card-title">{name}</div>
           <p className="card-detail">
@@ -35,9 +40,13 @@ function GameItem({ game, handleSave, savedGames, setSavedGames }) {
             <br />
             <i>{ratingString}</i>
           </p>
-          <button className="button" onClick={handleClick}>
-            Save Game
-          </button>
+          {useRouteMatch().url == "/games" ? (
+            <button onClick={handleClick} className="button">
+              Save Game
+            </button>
+          ) : (
+            <button className="button">Edit Game</button>
+          )}
         </div>
       </div>
     </li>

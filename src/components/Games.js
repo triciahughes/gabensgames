@@ -1,8 +1,8 @@
 import GameItem from "./GameItem";
 
-function Games({ games, handleClick }) {
+function Games({ games, handleSave }) {
   const gameList = games.map((gameObj) => (
-    <GameItem key={gameObj.id} game={gameObj} handleClick={handleClick} />
+    <GameItem key={gameObj.id} game={gameObj} handleSave={handleSave} />
   ));
 
   return (

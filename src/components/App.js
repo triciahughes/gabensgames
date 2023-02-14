@@ -1,6 +1,7 @@
 import "../App.css";
 import NavBar from "./NavBar";
 import Games from "./Games";
+import GameItem from "./GameItem";
 
 import Developers from "./Developers";
 // import img from "./name.png";
@@ -44,9 +45,10 @@ function App() {
     return dev.name.toLowerCase().includes(searchInput.toLowerCase());
   });
 
-  function handleSave(savedGames) {
-    // setSavedGames((currentState) => [...currentState, gameData]);
-    console.log(savedGames);
+  function handleSave(gameData) {
+    // return (games = { gameData });
+    setSavedGames((currentState) => [...currentState, gameData]);
+    // console.log(savedGames);
   }
 
   return (
@@ -60,12 +62,7 @@ function App() {
       />
       <Switch>
         <Route path="/games">
-          <Games
-            games={filteredGameList}
-            handleSave={handleSave}
-            savedGames={savedGames}
-            setSavedGames={setSavedGames}
-          />
+          <Games games={filteredGameList} handleSave={handleSave} />
         </Route>
         <Route path="/developers">
           <Developers devs={filteredDevList} />

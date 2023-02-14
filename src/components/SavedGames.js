@@ -2,10 +2,7 @@ import GameItem from "./GameItem";
 
 function SavedGames({ games }) {
   const gameList = games.map((gameObj) => (
-    <GameItem 
-      key={gameObj.id} 
-      game={gameObj} 
-    />
+    <GameItem key={gameObj.id} game={gameObj} />
   ));
 
   return (
