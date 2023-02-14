@@ -1,12 +1,15 @@
-import Card from "./Card";
+import GameItem from "./GameItem";
 
 function Games({ games }) {
   const gameList = games.map((gameObj) => (
-    <Card key={gameObj.id} id={gameObj.id} name={gameObj.name} />
+    <GameItem 
+      key={gameObj.id} 
+      game={gameObj} 
+    />
   ));
 
   return (
-    <div id="dev-list">
+    <div id="game-list">
       <ul>{gameList}</ul>
     </div>
   );
