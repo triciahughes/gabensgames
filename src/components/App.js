@@ -12,7 +12,9 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 function App() {
   const [games, setGames] = useState([]);
   const [devs, setDevs] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
 
+  //////// Data Fetching ///////
   useEffect(() => {
     fetch(`https://api.rawg.io/api/games?key=${API_KEY}`)
       .then((r) => r.json())
@@ -23,15 +25,27 @@ function App() {
       .then((data) => setDevs(data.results));
   }, []);
 
+  //////// Search Bar ////////
+  function handleSearchChange(e) {
+    setSearchInput(e.target.value);
+  }
+  //////// Search Bar Filtered List ////////
+  const filteredGameList = games.filter((game) => {
+    return game.name.toLowerCase().includes(searchInput.toLowerCase());
+  });
+
   return (
     <div>
       {/* <header>
         <img className="headerImg" src={img} alt="nameImg"></img>
       </header> */}
-      <NavBar />
+      <NavBar
+        handleSearchChange={handleSearchChange}
+        searchInput={searchInput}
+      />
       <Switch>
         <Route path="/games">
-          <Games games={games} />
+          <Games games={filteredGameList} />
         </Route>
         <Route path="/developers">
           <Developers devs={devs} />
