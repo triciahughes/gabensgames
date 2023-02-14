@@ -56,15 +56,6 @@ body {
   font-size: 20px;
 }
 
-.navbar img {
-  width: 70px;
-  border-radius: 50%;
-}
-
-.navbar a:hover {
-  background-color: whitesmoke;
-}
-
 .input {
   box-sizing: border-box;
   padding: 10px;
@@ -101,6 +92,14 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  z-index: 0;
+}
+
+.card img {
+  float: left;
+  height: 300px;
+  width: 500px;
+  object-fit: cover;
 }
 
 .card-content {
@@ -123,6 +122,13 @@ body {
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card button {
+  margin: auto;
+  border-radius: 8px;
+  border: 2px solid #3ACADF;
+  background-color: #5C3A92;
 }
 
 .card-title {

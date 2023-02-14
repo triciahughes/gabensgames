@@ -1,4 +1,7 @@
+import { useRouteMatch } from "react-router-dom";
+
 function GameItem({ game }) {
+
   const { name, id, genres, esrb_rating, metacritic, background_image } = game;
   const genreString = Array.from(genres.map((genre) => genre.name)).join(", ");
   const ratingString =
@@ -8,7 +11,6 @@ function GameItem({ game }) {
     <li className="cards-item" id={id}>
       <div className="card">
         <img
-          className="card-image"
           src={background_image}
           alt="Card image cap"
           styles="width:100%"
@@ -20,7 +22,10 @@ function GameItem({ game }) {
             <br />
             <i>{ratingString}</i>
           </p>
-          <button className="button">Save Game</button>
+          {useRouteMatch().url == '/games' ? (
+            <button className="button">Save Game</button>
+          ) : null}
+          
         </div>
       </div>
     </li>
