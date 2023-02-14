@@ -6,16 +6,21 @@ import GameItem from "./GameItem";
 import Developers from "./Developers";
 // import img from "./name.png";
 import SavedGames from "./SavedGames";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
+
 
 function App() {
   const [games, setGames] = useState([]);
   const [savedGames, setSavedGames] = useState([]);
   const [devs, setDevs] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+
+  const history = useHistory();
+  history.push('/games');
+
 
   //////// Data Fetching ///////
   useEffect(() => {
