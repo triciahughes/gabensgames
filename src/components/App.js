@@ -11,6 +11,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
   const [games, setGames] = useState([]);
+  const [savedGames, setSavedGames] = useState([]);
   const [devs, setDevs] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
@@ -18,11 +19,15 @@ function App() {
   useEffect(() => {
     fetch(`https://api.rawg.io/api/games?key=${API_KEY}`)
       .then((r) => r.json())
-      .then((data) => setGames(data.results));
+      .then(data => setGames(data.results));
 
     fetch(`https://api.rawg.io/api/developers?key=${API_KEY}`)
       .then((r) => r.json())
-      .then((data) => setDevs(data.results));
+      .then(data => setDevs(data.results));
+
+    fetch('http://localhost:3000/games')
+      .then(r => r.json())
+      .then(data => setSavedGames(data));
   }, []);
 
   //////// Search Bar ////////
@@ -55,7 +60,7 @@ function App() {
           <Developers devs={filteredDevList} />
         </Route>
         <Route path="/saved">
-          <SavedGames />
+          <SavedGames games={savedGames}/>
         </Route>
       </Switch>
     </div>
