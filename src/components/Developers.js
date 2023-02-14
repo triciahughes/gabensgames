@@ -1,8 +1,11 @@
 import DeveloperItem from "./DeveloperItem";
 
 function Developers({ devs }) {
-  const devList = devs.map((gameObj) => {
-    return <li key={gameObj.id}>{gameObj.name}</li>;
+  const devList = devs.map((devObj) => {
+    return <DeveloperItem 
+             key={devObj.id}
+             dev={devObj}
+           />;
   });
 
   return (
