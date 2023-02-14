@@ -1,8 +1,27 @@
-function GameItem() {
+function GameItem({ game }) {
+  const { name, id, genres, esrb_rating, metacritic, background_image } = game;
+  const genreString = Array.from(genres.map(genre => genre.name)).join(', ');
+  const ratingString = `metacritic: ${metacritic}` + '\n' + `ESRB: ${esrb_rating.name}`;
+
   return (
-    <div id="gameItem">
-      <div className="gameCards"></div>
-    </div>
+    <li className="cards-item" id={id}>
+      <div className="card">
+        <img
+          className="card-image"
+          src={background_image}
+          alt="Card image cap"
+          styles="width:100%"
+        />
+        <div className="card-content">
+          <div className="card-title">{name}</div>
+          <p className="card-detail">
+            <i>{genreString}</i>
+            <br />
+            <i>{ratingString}</i>
+          </p>
+        </div>
+      </div>
+    </li>
   );
 }
 
