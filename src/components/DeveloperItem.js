@@ -1,5 +1,4 @@
 function DeveloperItem({ dev }) {
-    console.log(dev);
     const { name, games, games_count } = dev;
 
     const gamesList = games.map(gameObj => {
