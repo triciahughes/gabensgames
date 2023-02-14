@@ -56,15 +56,6 @@ body {
   font-size: 20px;
 }
 
-.navbar img {
-  width: 70px;
-  border-radius: 50%;
-}
-
-.navbar a:hover {
-  background-color: whitesmoke;
-}
-
 .input {
   box-sizing: border-box;
   padding: 10px;
@@ -101,6 +92,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  z-index: 0;
 }
 
 .card img {
@@ -108,6 +100,12 @@ body {
   height: 300px;
   width: 500px;
   object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+  z-index: 0;
 }
 
 .card-content {
