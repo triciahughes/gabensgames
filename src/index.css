@@ -103,6 +103,13 @@ body {
   overflow: hidden;
 }
 
+.card img {
+  float: left;
+  height: 300px;
+  width: 500px;
+  object-fit: cover;
+}
+
 .card-content {
   display: flex;
   flex: 1 1 auto;

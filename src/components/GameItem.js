@@ -7,7 +7,6 @@ function GameItem({ game }) {
     <li className="cards-item" id={id}>
       <div className="card">
         <img
-          className="card-image"
           src={background_image}
           alt="Card image cap"
           styles="width:100%"
