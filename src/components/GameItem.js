@@ -1,7 +1,8 @@
 function GameItem({ game }) {
   const { name, id, genres, esrb_rating, metacritic, background_image } = game;
-  const genreString = Array.from(genres.map(genre => genre.name)).join(', ');
-  const ratingString = `metacritic: ${metacritic}` + '\n' + `ESRB: ${esrb_rating.name}`;
+  const genreString = Array.from(genres.map((genre) => genre.name)).join(", ");
+  const ratingString =
+    `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
 
   return (
     <li className="cards-item" id={id}>
@@ -18,6 +19,7 @@ function GameItem({ game }) {
             <br />
             <i>{ratingString}</i>
           </p>
+          <button className="button">Save Game</button>
         </div>
       </div>
     </li>
