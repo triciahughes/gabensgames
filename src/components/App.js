@@ -7,22 +7,20 @@ import SavedGames from "./SavedGames";
 import { Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const API_KEY = 'a77f9483f3f14f5292692794e7fba92a';
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
-  const [ games, setGames ] = useState([]);
-  const [ devs, setDevs ] = useState([]);
+  const [games, setGames] = useState([]);
+  const [devs, setDevs] = useState([]);
 
   useEffect(() => {
-
     fetch(`https://api.rawg.io/api/games?key=${API_KEY}`)
-      .then(r => r.json())
-      .then(data => setGames(data.results));
+      .then((r) => r.json())
+      .then((data) => setGames(data.results));
 
     fetch(`https://api.rawg.io/api/developers?key=${API_KEY}`)
-      .then(r => r.json())
-      .then(data => setDevs(data.results));
-
+      .then((r) => r.json())
+      .then((data) => setDevs(data.results));
   }, []);
 
   return (
