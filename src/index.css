@@ -102,12 +102,6 @@ body {
   object-fit: cover;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  transition: 0.5s;
-  z-index: 0;
-}
-
 .card-content {
   display: flex;
   flex: 1 1 auto;
@@ -128,6 +122,13 @@ body {
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card button {
+  margin: auto;
+  border-radius: 8px;
+  border: 2px solid #3ACADF;
+  background-color: #5C3A92;
 }
 
 .card-title {
