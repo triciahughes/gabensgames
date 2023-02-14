@@ -1,6 +1,8 @@
 import "../App.css";
 import NavBar from "./NavBar";
 import Games from "./Games";
+import GameItem from "./GameItem";
+
 import Developers from "./Developers";
 // import img from "./name.png";
 import SavedGames from "./SavedGames";
@@ -19,15 +21,15 @@ function App() {
   useEffect(() => {
     fetch(`https://api.rawg.io/api/games?key=${API_KEY}`)
       .then((r) => r.json())
-      .then(data => setGames(data.results));
+      .then((data) => setGames(data.results));
 
     fetch(`https://api.rawg.io/api/developers?key=${API_KEY}`)
       .then((r) => r.json())
-      .then(data => setDevs(data.results));
+      .then((data) => setDevs(data.results));
 
-    fetch('http://localhost:3000/games')
-      .then(r => r.json())
-      .then(data => setSavedGames(data));
+    fetch("http://localhost:3000/games")
+      .then((r) => r.json())
+      .then((data) => setSavedGames(data));
   }, []);
 
   //////// Search Bar ////////
@@ -43,6 +45,12 @@ function App() {
     return dev.name.toLowerCase().includes(searchInput.toLowerCase());
   });
 
+  function handleSave(gameData) {
+    // return (games = { gameData });
+    setSavedGames((currentState) => [...currentState, gameData]);
+    // console.log(savedGames);
+  }
+
   return (
     <div>
       {/* <header>
@@ -54,13 +62,13 @@ function App() {
       />
       <Switch>
         <Route path="/games">
-          <Games games={filteredGameList} />
+          <Games games={filteredGameList} handleSave={handleSave} />
         </Route>
         <Route path="/developers">
           <Developers devs={filteredDevList} />
         </Route>
         <Route path="/saved">
-          <SavedGames games={savedGames}/>
+          <SavedGames games={savedGames} />
         </Route>
       </Switch>
     </div>
