@@ -24,7 +24,9 @@ function GameItem({ game }) {
           </p>
           {useRouteMatch().url == '/games' ? (
             <button className="button">Save Game</button>
-          ) : null}
+          ) : (
+            <button className="button">Edit Game</button>
+          )}
           
         </div>
       </div>
