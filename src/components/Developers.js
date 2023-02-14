@@ -10,7 +10,7 @@ function Developers({ devs }) {
 
   return (
     <div id="dev-list">
-      <ul>{devList}</ul>
+      <ul className="game-list">{devList}</ul>
     </div>
   );
 }

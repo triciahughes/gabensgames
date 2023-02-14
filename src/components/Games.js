@@ -10,7 +10,7 @@ function Games({ games }) {
 
   return (
     <div id="game-list">
-      <ul>{gameList}</ul>
+      <ul className="game-list">{gameList}</ul>
     </div>
   );
 }

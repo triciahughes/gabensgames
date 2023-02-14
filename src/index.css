@@ -156,3 +156,13 @@ body {
     width: 50%;
   }
 }
+
+.game-list {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.game-list li {
+  display: inline-block;
+  vertical-align: middle;
+}
