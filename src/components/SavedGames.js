@@ -1,13 +1,17 @@
 import GameItem from "./GameItem";
 
-function SavedGames() {
+function SavedGames({ games }) {
+  const gameList = games.map((gameObj) => (
+    <GameItem 
+      key={gameObj.id} 
+      game={gameObj} 
+    />
+  ));
+
   return (
-    <h1>
-      SAVED GAMES
-      <div>
-        <GameItem />
-      </div>
-    </h1>
+    <div id="game-list">
+      <ul>{gameList}</ul>
+    </div>
   );
 }
 

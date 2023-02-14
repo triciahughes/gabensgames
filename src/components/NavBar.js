@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 
+
 function NavBar({ handleSearchChange, searchInput }) {
   return (
     <header>
@@ -13,7 +14,7 @@ function NavBar({ handleSearchChange, searchInput }) {
           className="input"
           type="text"
           placeholder="Search..."
-        ></input>
+        />
       </div>
     </header>
   );
