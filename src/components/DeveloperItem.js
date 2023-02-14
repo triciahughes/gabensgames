@@ -8,11 +8,13 @@ function DeveloperItem({ dev }) {
   return (
     <li className="cards-item">
       <div className="card">
-        <h1>{name}</h1>
-        <ul>{gamesList}</ul>
-        <p>
-          <i>{games_count} games</i>
-        </p>
+        <div className="card-content">
+          <h1 className="card-title">{name}</h1>
+          <ul>{gamesList}</ul>
+          <p>
+            <i>{games_count} games</i>
+          </p>
+        </div>
       </div>
     </li>
   );

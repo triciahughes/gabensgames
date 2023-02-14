@@ -150,6 +150,18 @@ body {
 .card-detail p {
   text-align: center;
 }
+.button {
+  transition-duration: 0.4s;
+  color: black;
+
+  max-width: 30%;
+}
+
+.button:hover {
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
 
 @media (max-width: 700px) {
   .cards-item {
