@@ -7,8 +7,6 @@ function GameItem({ game }) {
   const ratingString =
     `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
 
-  console.log(useRouteMatch().url)
-
   return (
     <li className="cards-item" id={id}>
       <div className="card">
