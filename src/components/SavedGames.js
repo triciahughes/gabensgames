@@ -1,19 +1,16 @@
 import GameItem from "./GameItem";
 import { useState } from "react";
+import Multiselect from "multiselect-react-dropdown";
 
 function SavedGames({ games, handleAddGame, handleRemove }) {
   const initialFormValues = {
     name: "",
-    url: "",
-    genre: [
-      {
-        name: "",
-      },
-    ],
-    metacritic: {
+    genres: [],
+    metacritic: "",
+    esrb_rating: {
       name: "",
     },
-    esrb_rating: "",
+    background_image: "",
   };
 
   const [formData, setFormData] = useState(initialFormValues);
@@ -22,6 +19,8 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
     <GameItem key={gameObj.id} game={gameObj} handleRemove={handleRemove} />
   ));
 
+  const handleOnSelect = (item1) => setFormData({ ...formData, genres: item1 });
+
   const handleInput = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -29,7 +28,18 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // handleAddGame(formData);
+    const genreArray = formData.genres.map((genre) => {
+      return { name: genre };
+    });
+    const esrbObj = { name: formData.esrb_rating };
+    console.log(formData.genres);
+    const newSavedGameData = {
+      name: formData.name,
+      genres: genreArray,
+      metacritic: parseInt(formData.metacritic),
+      esrb_rating: esrbObj,
+      background_image: formData.background_image,
+    };
 
     const configObj = {
       method: "POST",
@@ -37,7 +47,7 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(newSavedGameData),
     };
 
     fetch("http://localhost:3000/games", configObj)
@@ -49,18 +59,6 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
 
     setFormData(initialFormValues);
   };
-
-  const genreData = [
-    { text: "Books", value: 1 },
-    { text: "Movies, Music & Games", value: 2 },
-    { text: "Electronics & Computers", value: 3 },
-    { text: "Home, Garden & Tools", value: 4 },
-    { text: "Health & Beauty", value: 5 },
-    { text: "Toys, Kids & Baby", value: 6 },
-    { text: "Clothing & Jewelry", value: 7 },
-    { text: "Sports & Outdoors", value: 8 },
-    { text: "Automotive & Industrial", value: 9 },
-  ];
 
   return (
     <>
@@ -75,24 +73,29 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
             onChange={handleInput}
           />
           <br></br>
-          <label htmlFor="img">Image Url: </label>
-          <input
-            type="text"
-            id={formData.url}
-            name="url"
-            value={formData.url}
-            onChange={handleInput}
-          />
-          <br></br>
-          <label htmlFor="genre">Genres: </label>
-          <select
-            data={genreData}
-            selectMultiple={true}
-            touchUi={false}
+          <label htmlFor="genres">Genres: </label>
+          <Multiselect
             // id={formData.genre}
             // name="genre"
-            // value={formData.genre}
-            // onChange={handleInput}
+            selectedValues={formData.genres}
+            isObject={false}
+            onKeyPressFn={function noRefCheck() {}}
+            // onRemove={handleOnRemove}
+            // onSearch={function noRefCheck() {}}
+            onSelect={handleOnSelect}
+            //onChange={handleInput}
+            options={[
+              "Sandbox",
+              "Real-time strategy (RTS)",
+              "Shooter",
+              "MOBA",
+              "Role-playing (RPG, ARPG, and More)",
+              "Simulation and sports",
+              "Puzzlers and party games",
+              "Action-adventure",
+              "Survival and horror",
+              "Platformer",
+            ]}
           />
           <br></br>
           <label htmlFor="metacritic">Metacritic: </label>
@@ -112,14 +115,23 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
             onChange={handleInput}
           >
             <option value="N/A">Choose</option>
-            <option value="1">Early Childhood</option>
-            <option value="2">Everyone</option>
-            <option value="3">Everyone 10+</option>
-            <option value="4">Teen</option>
-            <option value="5">Mature</option>
-            <option value="6">Adults Only</option>
-            <option value="7">Rating Pending</option>
+            <option>Early Childhood</option>
+            <option>Everyone</option>
+            <option>Everyone 10+</option>
+            <option>Teen</option>
+            <option>Mature</option>
+            <option>Adults Only</option>
+            <option>Rating Pending</option>
           </select>
+          <br></br>
+          <label htmlFor="img">Image Url: </label>
+          <input
+            type="text"
+            id={formData.url}
+            name="background_image"
+            value={formData.background_image}
+            onChange={handleInput}
+          />
           <br></br>
           <button type="submit">Add Game</button>
         </form>
