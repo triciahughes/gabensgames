@@ -18,8 +18,12 @@ function App() {
   const [devs, setDevs] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
+  const history = useHistory();
+
   //////// Data Fetching ///////
   useEffect(() => {
+    history.push('/games');
+
     fetch(`https://api.rawg.io/api/games?key=${API_KEY}`)
       .then((r) => r.json())
       .then((data) => setGames(data.results));
