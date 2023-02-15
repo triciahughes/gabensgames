@@ -1,5 +1,7 @@
 import { useRouteMatch, useHistory } from "react-router-dom";
 
+// sweet
+
 function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
   const { name, id, genres, esrb_rating, metacritic, background_image } = game;
   const genreString = Array.from(genres.map((genre) => genre.name)).join(", ");
