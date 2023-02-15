@@ -1,12 +1,18 @@
-import { useState } from "react";
 import { useRouteMatch, useHistory } from "react-router-dom";
 
-function GameItem({ game, handleSave }) {
+function GameItem({ game, handleSave, handleRemove }) {
   const { name, id, genres, esrb_rating, metacritic, background_image } = game;
   const genreString = Array.from(genres.map((genre) => genre.name)).join(", ");
   const ratingString = `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
 
   const history = useHistory();
+
+  function handleClickRemove() {
+    fetch(`http://localhost:3000/games/${id}`, {
+      method: "DELETE"
+    })
+      .then(() => handleRemove(id));
+  }
 
   function handleClickEdit() {
     history.push(`/saved${id}/edit`)
@@ -57,7 +63,7 @@ function GameItem({ game, handleSave }) {
           ) : (
             <div class="button-container">
               <button className="button-edit" onClick={handleClickEdit}>Edit Game</button>
-              <button className="button-remove">Remove Game</button>
+              <button className="button-remove" onClick={handleClickRemove}>Remove Game</button>
             </div>
           )}
         </div>

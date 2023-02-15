@@ -51,29 +51,35 @@ function App() {
   });
 
   function handleSave(gameData) {
-    // return (games = { gameData });
     setSavedGames((currentState) => [...currentState, gameData]);
-    // console.log(savedGames);
+  }
+
+  function handleRemove(id) {
+    const newSavedGames = savedGames.filter(gameObj => gameObj.id !== id);
+    setSavedGames(newSavedGames);
   }
 
   return (
     <div>
-      {/* <header>
-        <img className="headerImg" src={img} alt="nameImg"></img>
-      </header> */}
       <NavBar
         handleSearchChange={handleSearchChange}
         searchInput={searchInput}
       />
       <Switch>
         <Route path="/games">
-          <Games games={filteredGameList} handleSave={handleSave} />
+          <Games 
+            games={filteredGameList} 
+            handleSave={handleSave} 
+          />
         </Route>
         <Route path="/developers">
           <Developers devs={filteredDevList} />
         </Route>
         <Route path="/saved">
-          <SavedGames games={savedGames} />
+          <SavedGames 
+            games={savedGames} 
+            handleRemove={handleRemove}
+          />
         </Route>
         <Route path="/saved:id/edit">
           <EditGame />
