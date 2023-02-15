@@ -1,7 +1,10 @@
+/* App */
+
 .headerImg {
-  width: 350px;
   height: auto;
+  width: 350px;
 }
+
 main {
   color: white;
 }
@@ -23,11 +26,11 @@ header {
 }
 
 body {
-  padding-top: 60px;
-  background: linear-gradient(-45deg, #8a64d6, #729efd, #3acadf, #0cead9);
-  background-size: 400% 400%;
   animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background: linear-gradient(-45deg, #8a64d6, #729efd, #3acadf, #0cead9);
   height: 100vh;
+  padding-top: 60px;
 }
 
 @keyframes gradient {
@@ -42,48 +45,67 @@ body {
   }
 }
 
-.navbar {
-  display: inline;
+@media (max-width: 700px) {
+  .cards-item {
+    width: 50%;
+  }
 }
+
+/* NavBar */
 
 .navbar a {
-  float: left;
-  text-align: center;
-  padding: 16px;
-  /* color: #5c3a92; */
   color: black;
-  text-decoration: none;
+  float: left;
   font-size: 20px;
+  padding: 16px;
+  text-align: center;
+  text-decoration: none;
 }
 
-.input {
+.navbar {
+  background-color: #3acadf;
+  border: 1px solid #fffbfb;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
-  padding: 10px;
+  display: inline;
+  height: 60px;
+  left: 0;
+  opacity: 1;
   position: absolute;
-  width: 447px;
-  height: 28px;
-  left: 915px;
-  top: 15px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
 
+.search {
   background: rgba(217, 217, 217, 0.5);
+  border-radius: 20px;
   border: 2px solid #fff8f8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
+  box-sizing: border-box;
+  float: right;
+  height: 28px;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding-left: 10px;
+  width: 447px;
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Games */
+
+.game-list {
+  margin: 0 auto;
+  text-align: center;
 }
 
-.cards-item {
-  display: flex;
-  padding: 1rem;
-  width: 25%;
+.game-list li {
+  display: inline-block;
+  vertical-align: middle;
 }
+
+/* GameItem */
 
 .card {
   background-color: white;
@@ -98,15 +120,21 @@ body {
 .card img {
   float: left;
   height: 300px;
-  width: 500px;
   object-fit: cover;
+  width: 500px;
 }
 
 .card-content {
   display: flex;
-  flex: 1 1 auto;
   flex-direction: column;
+  flex: 1 1 auto;
   padding: 1rem;
+}
+
+.cards-item {
+  display: flex;
+  padding: 1rem;
+  width: 25%;
 }
 
 .card--image {
@@ -129,11 +157,11 @@ body {
 }
 
 .card-title {
-  text-align: center;
   color: #696969;
   font-size: 1.25rem;
   font-weight: 300;
   letter-spacing: 2px;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -150,9 +178,44 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.card-detail p {
+.card-detail i {
   text-align: center;
+  font-family: sans-serif;
 }
+
+.button-container {
+  display: inline;
+}
+
+.button-save,
+.button-edit,
+.button-remove {
+  background-color: #5C3A92;
+  border-radius: 8px;
+  border: 2px solid #3ACADF;
+  margin: auto;
+  transition-duration: 0.4s;
+  color: whitesmoke;
+  max-width: 30%;
+  transition-duration: 0.4s;
+}
+
+.button-edit, 
+.button-remove {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.button-save:hover
+.button-edit:hover 
+.button-save:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  color: black;
+}
+
+/* Developers */
+
+/* DeveloperItem */
 
 .dev-card {
   background-repeat: no-repeat;
@@ -161,35 +224,13 @@ body {
 
 .dev-card-content {
   background-color: black;
-  opacity: 0.75;
   color: white;
+  opacity: 0.75;
 }
 
-.button-save {
-  transition-duration: 0.4s;
-  color: whitesmoke;
+/* SavedGames */
 
-  max-width: 30%;
-}
+/* Edit Game */
 
-.button-save:hover {
-  color: black;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
 
-@media (max-width: 700px) {
-  .cards-item {
-    width: 50%;
-  }
-}
 
-.game-list {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.game-list li {
-  display: inline-block;
-  vertical-align: middle;
-}

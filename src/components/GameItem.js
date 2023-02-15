@@ -1,13 +1,18 @@
 import { useState } from "react";
-import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch, useHistory } from "react-router-dom";
 
 function GameItem({ game, handleSave }) {
   const { name, id, genres, esrb_rating, metacritic, background_image } = game;
   const genreString = Array.from(genres.map((genre) => genre.name)).join(", ");
-  const ratingString =
-    `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
+  const ratingString = `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
 
-  function handleClick() {
+  const history = useHistory();
+
+  function handleClickEdit() {
+    history.push(`/saved${id}/edit`)
+  }
+
+  function handleClickSave() {
     const gameData = {
       name: name,
       id: id,
@@ -46,11 +51,14 @@ function GameItem({ game, handleSave }) {
             <i>{ratingString}</i>
           </p>
           {useRouteMatch().url == "/games" ? (
-            <button onClick={handleClick} className="button-save">
+            <button onClick={handleClickSave} className="button-save">
               Save Game
             </button>
           ) : (
-            <button className="button">Edit Game</button>
+            <div class="button-container">
+              <button className="button-edit" onClick={handleClickEdit}>Edit Game</button>
+              <button className="button-remove">Remove Game</button>
+            </div>
           )}
         </div>
       </div>
