@@ -156,6 +156,18 @@ body {
 .card-detail p {
   text-align: center;
 }
+
+.dev-card {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dev-card-content {
+  background-color: black;
+  opacity: 0.75;
+  color: white;
+}
+
 .button {
   transition-duration: 0.4s;
   color: black;
