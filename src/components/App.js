@@ -41,7 +41,7 @@ function App() {
   function handleSearchChange(e) {
     setSearchInput(e.target.value);
   }
-
+  
   //////// Search Bar Filtered Lists ////////
   const filteredGameList = games.filter((game) => {
     return game.name.toLowerCase().includes(searchInput.toLowerCase());
@@ -70,7 +70,6 @@ function App() {
         <Route path="/games">
           <Games 
             games={filteredGameList} 
-            savedGames={savedGames}
             handleSave={handleSave} 
           />
         </Route>
