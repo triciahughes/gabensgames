@@ -1,4 +1,4 @@
-import { useRouteMatch, useHistory } from "react-router-dom";
+import { useRouteMatch, useHistory, useNavigate } from "react-router-dom";
 
 function GameItem({ game, handleSave, handleRemove }) {
   const { name, id, genres, esrb_rating, metacritic, background_image } = game;
@@ -6,12 +6,14 @@ function GameItem({ game, handleSave, handleRemove }) {
   const ratingString = `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
 
   const history = useHistory();
+  // const navigate = useNavigate();
 
   function handleClickRemove() {
     fetch(`http://localhost:3000/games/${id}`, {
       method: "DELETE"
     })
       .then(() => handleRemove(id));
+    history.push('/saved');
   }
 
   function handleClickEdit() {
