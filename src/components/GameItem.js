@@ -1,12 +1,15 @@
 import { useRouteMatch, useHistory } from "react-router-dom";
 
-function GameItem({ game, handleSave, handleRemove }) {
+function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
   const { name, id, genres, esrb_rating, metacritic, background_image } = game;
   const genreString = Array.from(genres.map((genre) => genre.name)).join(", ");
   const ratingString = `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
-
   const history = useHistory();
 
+  let gamePageButttonText;
+  if (savedGameIds) {
+    gamePageButttonText = savedGameIds.includes(id) ? 'Saved' : 'Save Game'; 
+  };
 
   function handleClickRemove() {
     fetch(`http://localhost:3000/games/${id}`, {
@@ -59,7 +62,7 @@ function GameItem({ game, handleSave, handleRemove }) {
           </p>
           {useRouteMatch().url == "/games" ? (
             <button onClick={handleClickSave} className="button-save">
-              Save Game
+              {gamePageButttonText}
             </button>
           ) : (
             <div class="button-container">
