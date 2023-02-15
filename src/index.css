@@ -120,11 +120,8 @@ body {
   position: relative;
   transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
 }
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
 
-.card button {
+.button-save {
   margin: auto;
   border-radius: 8px;
   border: 2px solid #3acadf;
@@ -156,14 +153,26 @@ body {
 .card-detail p {
   text-align: center;
 }
-.button {
+
+.dev-card {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dev-card-content {
+  background-color: black;
+  opacity: 0.75;
+  color: white;
+}
+
+.button-save {
   transition-duration: 0.4s;
   color: whitesmoke;
 
   max-width: 30%;
 }
 
-.button:hover {
+.button-save:hover {
   color: black;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
