@@ -9,7 +9,7 @@ main {
 header {
   box-sizing: border-box;
   position: absolute;
-  background-color: #3acadf;
+  background-color: rgba(217, 217, 217, 1);
   border: 1px solid #fffbfb;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   width: 100%;
@@ -66,7 +66,7 @@ body {
   top: 15px;
 
   background: rgba(217, 217, 217, 0.5);
-  border: 1px solid #fff8f8;
+  border: 2px solid #fff8f8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
 }
@@ -127,8 +127,8 @@ body {
 .card button {
   margin: auto;
   border-radius: 8px;
-  border: 2px solid #3ACADF;
-  background-color: #5C3A92;
+  border: 2px solid #3acadf;
+  background-color: #5c3a92;
 }
 
 .card-title {
@@ -158,7 +158,7 @@ body {
 }
 .button {
   transition-duration: 0.4s;
-  color: black;
+  color: whitesmoke;
 
   max-width: 30%;
 }
