@@ -1,6 +1,6 @@
 import { useRouteMatch, useHistory } from "react-router-dom";
 
-// sweet
+// wtf
 
 function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
   const { name, id, genres, esrb_rating, metacritic, background_image } = game;
