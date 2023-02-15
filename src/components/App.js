@@ -54,6 +54,10 @@ function App() {
     // console.log(savedGames);
   }
 
+  const handleAddGame = (formData) => {
+    setSavedGames((savedGames) => [...savedGames, formData]);
+  };
+
   // function handleNewSave(newGameData) {
   //   setGames((currentState) => [...currentState, newGameData]);
   // }
@@ -79,7 +83,7 @@ function App() {
           <Developers devs={filteredDevList} />
         </Route>
         <Route path="/saved">
-          <SavedGames games={savedGames} />
+          <SavedGames handleAddGame={handleAddGame} games={games} />
         </Route>
       </Switch>
     </div>

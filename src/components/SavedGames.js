@@ -1,46 +1,52 @@
 import GameItem from "./GameItem";
 import { useState } from "react";
 
-function SavedGames({ games }) {
-  const [formData, setFormData] = useState({
+function SavedGames({ games, handleAddGame }) {
+  const initialFormValues = {
     name: "",
     url: "",
     genre: "",
     metacritic: "",
     esrb_rating: "",
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormValues);
 
   const gameList = games.map((gameObj) => (
     <GameItem key={gameObj.id} game={gameObj} />
   ));
 
-  function handleInput(e) {
+  const handleInput = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-  }
+  };
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // fetch("http://localhost:3000/games", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "application/json",
-    //   },
-    //   body: JSON.stringify(formData),
-    // })
-    //   .then((r) => r.json())
-    //   .then((newGameData) => onSubmit(newGameData))
-    //   .catch((error) =>
-    //     alert("Sorry there's been an ERROR. Please try again (:")
-    //   );
-  }
-  // onSubmit={handleSubmit}
+    // handleAddGame(formData);
+
+    const configObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(formData),
+    };
+
+    fetch("http://localhost:3000/games", configObj)
+      .then((r) => r.json())
+      .then((newGameData) => handleAddGame(newGameData))
+      .catch((error) =>
+        alert("Sorry there's been an ERROR. Please try again (:")
+      );
+    setFormData(initialFormValues);
+  };
 
   return (
     <>
       <div>
-        <form onSubmit={handleSubmit} method="GET|POST">
+        <form onSubmit={handleSubmit} autoComplete="off">
           <label htmlFor="title">Game Title: </label>
           <input
             type="text"
@@ -84,6 +90,7 @@ function SavedGames({ games }) {
             value={formData.esrb_rating}
             onChange={handleInput}
           >
+            <option value="N/A">Choose</option>
             <option value="1">Early Childhood</option>
             <option value="2">Everyone</option>
             <option value="3">Everyone 10+</option>
