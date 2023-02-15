@@ -12,8 +12,16 @@ function SavedGames({ games, handleAddGame }) {
 
   const [formData, setFormData] = useState(initialFormValues);
 
+<<<<<<< HEAD
+=======
+function SavedGames({ games, handleRemove }) {
+>>>>>>> main
   const gameList = games.map((gameObj) => (
-    <GameItem key={gameObj.id} game={gameObj} />
+    <GameItem 
+      key={gameObj.id} 
+      game={gameObj} 
+      handleRemove={handleRemove} 
+    />
   ));
 
   const handleInput = (e) => {

@@ -11,7 +11,7 @@ function NavBar({ handleSearchChange, searchInput }) {
         <input
           onChange={handleSearchChange}
           value={searchInput}
-          className="input"
+          className="search"
           type="text"
           placeholder="Search..."
         />
