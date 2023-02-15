@@ -5,8 +5,14 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
   const initialFormValues = {
     name: "",
     url: "",
-    genre: "",
-    metacritic: "",
+    genre: [
+      {
+        name: "",
+      },
+    ],
+    metacritic: {
+      name: "",
+    },
     esrb_rating: "",
   };
 
@@ -40,8 +46,21 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
       .catch((error) =>
         alert("Sorry there's been an ERROR. Please try again (:")
       );
+
     setFormData(initialFormValues);
   };
+
+  const genreData = [
+    { text: "Books", value: 1 },
+    { text: "Movies, Music & Games", value: 2 },
+    { text: "Electronics & Computers", value: 3 },
+    { text: "Home, Garden & Tools", value: 4 },
+    { text: "Health & Beauty", value: 5 },
+    { text: "Toys, Kids & Baby", value: 6 },
+    { text: "Clothing & Jewelry", value: 7 },
+    { text: "Sports & Outdoors", value: 8 },
+    { text: "Automotive & Industrial", value: 9 },
+  ];
 
   return (
     <>
@@ -66,12 +85,14 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
           />
           <br></br>
           <label htmlFor="genre">Genres: </label>
-          <input
-            type="text"
-            id={formData.genre}
-            name="genre"
-            value={formData.genre}
-            onChange={handleInput}
+          <select
+            data={genreData}
+            selectMultiple={true}
+            touchUi={false}
+            // id={formData.genre}
+            // name="genre"
+            // value={formData.genre}
+            // onChange={handleInput}
           />
           <br></br>
           <label htmlFor="metacritic">Metacritic: </label>
