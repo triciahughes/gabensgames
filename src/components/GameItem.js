@@ -1,6 +1,6 @@
 import { useRouteMatch, useHistory } from "react-router-dom";
 
-function GameItem({ game, handleSave, handleRemove }) {
+function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
   const { name, id, genres, esrb_rating, metacritic, background_image } = game;
   const genreString = Array.from(genres.map((genre) => genre.name)).join(", ");
   const ratingString = `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
