@@ -5,11 +5,7 @@ import Games from "./Games";
 import NavBar from "./NavBar";
 import SavedGames from "./SavedGames";
 import { useState, useEffect } from "react";
-import { 
-  Switch, 
-  Route, 
-  useHistory 
-} from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -22,7 +18,7 @@ function App() {
 
   //////// Data Fetching ///////
   useEffect(() => {
-    history.push('/games');
+    history.push("/games");
 
     fetch(`https://api.rawg.io/api/games?key=${API_KEY}`)
       .then((r) => r.json())
@@ -41,7 +37,6 @@ function App() {
   function handleSearchChange(e) {
     setSearchInput(e.target.value);
   }
-
   //////// Search Bar Filtered Lists ////////
   const filteredGameList = games.filter((game) => {
     return game.name.toLowerCase().includes(searchInput.toLowerCase());
@@ -56,9 +51,13 @@ function App() {
   }
 
   function handleRemove(id) {
-    const newSavedGames = savedGames.filter(gameObj => gameObj.id !== id);
+    const newSavedGames = savedGames.filter((gameObj) => gameObj.id !== id);
     setSavedGames(newSavedGames);
   }
+
+  const handleAddGame = (formData) => {
+    setSavedGames((savedGames) => [...savedGames, formData]);
+  };
 
   return (
     <div>
@@ -68,19 +67,16 @@ function App() {
       />
       <Switch>
         <Route path="/games">
-          <Games 
-            games={filteredGameList} 
-            savedGames={savedGames}
-            handleSave={handleSave} 
-          />
+          <Games games={filteredGameList} handleSave={handleSave} />
         </Route>
         <Route path="/developers">
           <Developers devs={filteredDevList} />
         </Route>
         <Route path="/saved">
-          <SavedGames 
-            games={savedGames} 
+          <SavedGames
+            games={savedGames}
             handleRemove={handleRemove}
+            handleAddGame={handleAddGame}
           />
         </Route>
         <Route path="/saved:id/edit">
