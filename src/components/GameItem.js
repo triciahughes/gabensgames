@@ -24,9 +24,14 @@ function GameItem({ game, handleSave }) {
         Accept: "application/json",
       },
       body: JSON.stringify(gameData),
-    });
-
-    handleSave(gameData);
+    })
+      .then((r) => r.json())
+      .then((gameData) => handleSave(gameData))
+      .catch((error) =>
+        alert(
+          "You've already saved this game, please choose a different one (:"
+        )
+      );
   }
 
   return (
