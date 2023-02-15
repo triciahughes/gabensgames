@@ -32,7 +32,6 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
       return { name: genre };
     });
     const esrbObj = { name: formData.esrb_rating };
-    console.log(formData.genres);
     const newSavedGameData = {
       name: formData.name,
       genres: genreArray,

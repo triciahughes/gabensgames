@@ -4,7 +4,6 @@ import EditGame from "./EditGame";
 import Games from "./Games";
 import NavBar from "./NavBar";
 import SavedGames from "./SavedGames";
-import { Switch, Route, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 
@@ -16,10 +15,11 @@ function App() {
   const [devs, setDevs] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const history = useHistory();
-  history.push("/games");
 
   //////// Data Fetching ///////
   useEffect(() => {
+    history.push("/games");
+
     fetch(`https://api.rawg.io/api/games?key=${API_KEY}`)
       .then((r) => r.json())
       .then((data) => setGames(data.results));
