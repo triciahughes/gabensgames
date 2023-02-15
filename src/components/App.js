@@ -1,7 +1,7 @@
 import "../App.css";
 import NavBar from "./NavBar";
 import Games from "./Games";
-// import GameItem from "./GameItem";
+import GameItem from "./GameItem";
 
 import Developers from "./Developers";
 // import img from "./name.png";
