@@ -1,7 +1,7 @@
 import "../App.css";
 import NavBar from "./NavBar";
 import Games from "./Games";
-import GameItem from "./GameItem";
+// import GameItem from "./GameItem";
 
 import Developers from "./Developers";
 // import img from "./name.png";
@@ -11,7 +11,6 @@ import { useState, useEffect } from "react";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-
 function App() {
   const [games, setGames] = useState([]);
   const [savedGames, setSavedGames] = useState([]);
@@ -19,8 +18,7 @@ function App() {
   const [searchInput, setSearchInput] = useState("");
 
   const history = useHistory();
-  history.push('/games');
-
+  history.push("/games");
 
   //////// Data Fetching ///////
   useEffect(() => {
@@ -55,6 +53,14 @@ function App() {
     setSavedGames((currentState) => [...currentState, gameData]);
     // console.log(savedGames);
   }
+
+  // function handleNewSave(newGameData) {
+  //   setGames((currentState) => [...currentState, newGameData]);
+  // }
+
+  // function onSubmit(newGameData) {
+  //   handleNewSave(newGameData);
+  // }
 
   return (
     <div>
