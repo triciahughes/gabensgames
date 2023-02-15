@@ -46,7 +46,7 @@ function GameItem({ game, handleSave }) {
             <i>{ratingString}</i>
           </p>
           {useRouteMatch().url == "/games" ? (
-            <button onClick={handleClick} className="button">
+            <button onClick={handleClick} className="button-save">
               Save Game
             </button>
           ) : (
