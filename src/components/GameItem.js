@@ -3,21 +3,33 @@ import { useRouteMatch, useHistory } from "react-router-dom";
 function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
   const { name, id, genres, esrb_rating, metacritic, background_image } = game;
   const genreString = Array.from(genres.map((genre) => genre.name)).join(", ");
-  const ratingString = `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
+  const ratingString =
+    `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
 
   const history = useHistory();
 
 
   function handleClickRemove() {
     fetch(`http://localhost:3000/games/${id}`, {
-      method: "DELETE"
-    })
-      .then(() => handleRemove(id));
+      method: "DELETE",
+    }).then(() => handleRemove(id));
   }
 
   function handleClickEdit() {
-    history.push(`/saved${id}/edit`)
+    history.push(`/saved${id}/edit`);
   }
+
+  // const history = useHistory();
+
+  function handleClickRemove() {
+    fetch(`http://localhost:3000/games/${id}`, {
+      method: "DELETE",
+    }).then(() => handleRemove(id));
+  }
+
+  // function handleClickEdit() {
+  //   history.push(`/saved${id}/edit`);
+  // }
 
   function handleClickSave() {
     const gameData = {
@@ -62,9 +74,13 @@ function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
               Save Game
             </button>
           ) : (
-            <div class="button-container">
-              <button className="button-edit" onClick={handleClickEdit}>Edit Game</button>
-              <button className="button-remove" onClick={handleClickRemove}>Remove Game</button>
+            <div className="button-container">
+              <button className="button-edit" onClick={handleClickEdit}>
+                Edit Game
+              </button>
+              <button className="button-remove" onClick={handleClickRemove}>
+                Remove Game
+              </button>
             </div>
           )}
         </div>

@@ -1,8 +1,8 @@
 {
   "games": [
     {
-      "name": "The Witcher 3: Wild Hunt",
-      "id": 3328,
+      "name": "Grand Theft Auto V",
+      "id": 3498,
       "genres": [
         {
           "id": 4,
@@ -17,13 +17,6 @@
           "slug": "adventure",
           "games_count": 134244,
           "image_background": "https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg"
-        },
-        {
-          "id": 5,
-          "name": "RPG",
-          "slug": "role-playing-games-rpg",
-          "games_count": 52935,
-          "image_background": "https://media.rawg.io/media/games/5a4/5a44112251d70a25291cc33757220fce.jpg"
         }
       ],
       "esrb_rating": {
@@ -32,142 +25,7 @@
         "slug": "mature"
       },
       "metacritic": 92,
-      "background_image": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
-    },
-    {
-      "name": "Left 4 Dead 2",
-      "id": 12020,
-      "genres": [
-        {
-          "id": 4,
-          "name": "Action",
-          "slug": "action",
-          "games_count": 174823,
-          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-        },
-        {
-          "id": 2,
-          "name": "Shooter",
-          "slug": "shooter",
-          "games_count": 61790,
-          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-        }
-      ],
-      "esrb_rating": {
-        "id": 4,
-        "name": "Mature",
-        "slug": "mature"
-      },
-      "metacritic": 89,
-      "background_image": "https://media.rawg.io/media/games/d58/d588947d4286e7b5e0e12e1bea7d9844.jpg"
-    },
-    {
-      "name": "The Elder Scrolls V: Skyrim",
-      "id": 5679,
-      "genres": [
-        {
-          "id": 4,
-          "name": "Action",
-          "slug": "action",
-          "games_count": 174823,
-          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-        },
-        {
-          "id": 5,
-          "name": "RPG",
-          "slug": "role-playing-games-rpg",
-          "games_count": 52935,
-          "image_background": "https://media.rawg.io/media/games/5a4/5a44112251d70a25291cc33757220fce.jpg"
-        }
-      ],
-      "esrb_rating": {
-        "id": 4,
-        "name": "Mature",
-        "slug": "mature"
-      },
-      "metacritic": 94,
-      "background_image": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
-    },
-    {
-      "name": "BioShock Infinite",
-      "id": 4062,
-      "genres": [
-        {
-          "id": 4,
-          "name": "Action",
-          "slug": "action",
-          "games_count": 174823,
-          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-        },
-        {
-          "id": 2,
-          "name": "Shooter",
-          "slug": "shooter",
-          "games_count": 61790,
-          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-        }
-      ],
-      "esrb_rating": {
-        "id": 4,
-        "name": "Mature",
-        "slug": "mature"
-      },
-      "metacritic": 94,
-      "background_image": "https://media.rawg.io/media/games/fc1/fc1307a2774506b5bd65d7e8424664a7.jpg"
-    },
-    {
-      "name": "BioShock",
-      "id": 4286,
-      "genres": [
-        {
-          "id": 4,
-          "name": "Action",
-          "slug": "action",
-          "games_count": 174823,
-          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-        },
-        {
-          "id": 2,
-          "name": "Shooter",
-          "slug": "shooter",
-          "games_count": 61790,
-          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-        }
-      ],
-      "esrb_rating": {
-        "id": 4,
-        "name": "Mature",
-        "slug": "mature"
-      },
-      "metacritic": 96,
-      "background_image": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg"
-    },
-    {
-      "name": "Half-Life 2",
-      "id": 13537,
-      "genres": [
-        {
-          "id": 4,
-          "name": "Action",
-          "slug": "action",
-          "games_count": 174823,
-          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-        },
-        {
-          "id": 2,
-          "name": "Shooter",
-          "slug": "shooter",
-          "games_count": 61790,
-          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-        }
-      ],
-      "esrb_rating": {
-        "id": 4,
-        "name": "Mature",
-        "slug": "mature"
-      },
-      "metacritic": 96,
-      "background_image": "https://media.rawg.io/media/games/b8c/b8c243eaa0fbac8115e0cdccac3f91dc.jpg"
+      "background_image": "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
     }
   ]
 }
