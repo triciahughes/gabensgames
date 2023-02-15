@@ -1,23 +1,23 @@
 import "../App.css";
-import NavBar from "./NavBar";
-import Games from "./Games";
-import EditGame from "./EditGame";
-
 import Developers from "./Developers";
-// import img from "./name.png";
+import EditGame from "./EditGame";
+import Games from "./Games";
+import NavBar from "./NavBar";
 import SavedGames from "./SavedGames";
-import { Switch, Route, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { 
+  Switch, 
+  Route, 
+  useHistory 
+} from "react-router-dom";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-
 
 function App() {
   const [games, setGames] = useState([]);
   const [savedGames, setSavedGames] = useState([]);
   const [devs, setDevs] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-
   const history = useHistory();
 
   //////// Data Fetching ///////
@@ -41,6 +41,7 @@ function App() {
   function handleSearchChange(e) {
     setSearchInput(e.target.value);
   }
+  
   //////// Search Bar Filtered Lists ////////
   const filteredGameList = games.filter((game) => {
     return game.name.toLowerCase().includes(searchInput.toLowerCase());
