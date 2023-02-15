@@ -119,6 +119,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   z-index: 0;
+  height: 500px;
 }
 
 .card img {
