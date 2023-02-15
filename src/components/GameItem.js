@@ -51,11 +51,14 @@ function GameItem({ game, handleSave }) {
             <i>{ratingString}</i>
           </p>
           {useRouteMatch().url == "/games" ? (
-            <button onClick={handleClickSave} className="button-save">
+            <button onClick={handleClickSave} className="button-game-item">
               Save Game
             </button>
           ) : (
-            <button className="button-edit" onClick={handleClickEdit}>Edit Game</button>
+            <div class="button-container">
+              <button className="button-game-item" onClick={handleClickEdit}>Edit Game</button>
+              <button className="button-game-item">Remove Game</button>
+            </div>
           )}
         </div>
       </div>
