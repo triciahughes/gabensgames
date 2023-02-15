@@ -50,7 +50,7 @@ function GameItem({ game, handleSave }) {
               Save Game
             </button>
           ) : (
-            <button className="button">Edit Game</button>
+            <button className="button-edit">Edit Game</button>
           )}
         </div>
       </div>

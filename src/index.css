@@ -128,6 +128,13 @@ body {
   background-color: #5C3A92;
 }
 
+.button-edit {
+  margin: auto;
+  border-radius: 8px;
+  border: 2px solid #3ACADF;
+  background-color: #5C3A92;
+}
+
 .card-title {
   text-align: center;
   color: #696969;
@@ -168,11 +175,22 @@ body {
 .button-save {
   transition-duration: 0.4s;
   color: black;
+  max-width: 30%;
+}
 
+.button-edit {
+  transition-duration: 0.4s;
+  color: black;
   max-width: 30%;
 }
 
 .button-save:hover {
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button-edit:hover {
   color: black;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);

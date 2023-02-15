@@ -1,7 +1,7 @@
 import "../App.css";
 import NavBar from "./NavBar";
 import Games from "./Games";
-import GameItem from "./GameItem";
+import EditGame from "./EditGame";
 
 import Developers from "./Developers";
 // import img from "./name.png";
@@ -74,6 +74,9 @@ function App() {
         </Route>
         <Route path="/saved">
           <SavedGames games={savedGames} />
+        </Route>
+        <Route path="/saved:id/edit">
+          <EditGame />
         </Route>
       </Switch>
     </div>
