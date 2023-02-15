@@ -5,6 +5,26 @@
   width: 350px;
 }
 
+main {
+  color: white;
+}
+
+header {
+  box-sizing: border-box;
+  position: absolute;
+  background-color: rgba(217, 217, 217, 1);
+  border: 1px solid #fffbfb;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  opacity: 1;
+}
+
 body {
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
@@ -62,7 +82,7 @@ body {
 .search {
   background: rgba(217, 217, 217, 0.5);
   border-radius: 20px;
-  border: 1px solid #fff8f8;
+  border: 2px solid #fff8f8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   float: right;
@@ -129,6 +149,13 @@ body {
   transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
 }
 
+.button-save {
+  margin: auto;
+  border-radius: 8px;
+  border: 2px solid #3acadf;
+  background-color: #5c3a92;
+}
+
 .card-title {
   color: #696969;
   font-size: 1.25rem;
@@ -166,11 +193,11 @@ body {
   background-color: #5C3A92;
   border-radius: 8px;
   border: 2px solid #3ACADF;
-  color: black;
   margin: auto;
+  transition-duration: 0.4s;
+  color: whitesmoke;
   max-width: 30%;
   transition-duration: 0.4s;
-
 }
 
 .button-edit, 
