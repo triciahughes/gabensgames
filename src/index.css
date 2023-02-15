@@ -59,17 +59,17 @@ body {
   width: 100%;
 }
 
-.input {
+.search {
   background: rgba(217, 217, 217, 0.5);
   border-radius: 20px;
   border: 1px solid #fff8f8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
+  float: right;
   height: 28px;
-  left: 915px;
-  padding: 10px;
-  position: absolute;
-  top: 15px;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding-left: 10px;
   width: 447px;
 }
 
@@ -151,15 +151,18 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.card-detail p {
+.card-detail i {
   text-align: center;
+  font-family: sans-serif;
 }
 
 .button-container {
   display: inline;
 }
 
-.button-game-item {
+.button-save,
+.button-edit,
+.button-remove {
   background-color: #5C3A92;
   border-radius: 8px;
   border: 2px solid #3ACADF;
@@ -167,11 +170,18 @@ body {
   margin: auto;
   max-width: 30%;
   transition-duration: 0.4s;
+
+}
+
+.button-edit, 
+.button-remove {
   margin-left: 15px;
   margin-right: 15px;
 }
 
-.button-game-item:hover {
+.button-save:hover
+.button-edit:hover 
+.button-save:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   color: black;
 }
