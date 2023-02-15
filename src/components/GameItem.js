@@ -26,9 +26,9 @@ function GameItem({ game, handleSave, handleRemove }) {
     }).then(() => handleRemove(id));
   }
 
-  function handleClickEdit() {
-    history.push(`/saved${id}/edit`);
-  }
+  // function handleClickEdit() {
+  //   history.push(`/saved${id}/edit`);
+  // }
 
   function handleClickSave() {
     const gameData = {
@@ -73,7 +73,7 @@ function GameItem({ game, handleSave, handleRemove }) {
               Save Game
             </button>
           ) : (
-            <div class="button-container">
+            <div className="button-container">
               <button className="button-edit" onClick={handleClickEdit}>
                 Edit Game
               </button>

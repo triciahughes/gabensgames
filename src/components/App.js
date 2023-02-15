@@ -53,21 +53,13 @@ function App() {
   }
 
   function handleRemove(id) {
-    const newSavedGames = savedGames.filter(gameObj => gameObj.id !== id);
+    const newSavedGames = savedGames.filter((gameObj) => gameObj.id !== id);
     setSavedGames(newSavedGames);
   }
 
   const handleAddGame = (formData) => {
     setSavedGames((savedGames) => [...savedGames, formData]);
   };
-
-  // function handleNewSave(newGameData) {
-  //   setGames((currentState) => [...currentState, newGameData]);
-  // }
-
-  // function onSubmit(newGameData) {
-  //   handleNewSave(newGameData);
-  // }
 
   return (
     <div>
@@ -77,26 +69,20 @@ function App() {
       />
       <Switch>
         <Route path="/games">
-          <Games 
-            games={filteredGameList} 
-            handleSave={handleSave} 
-          />
+          <Games games={filteredGameList} handleSave={handleSave} />
         </Route>
         <Route path="/developers">
           <Developers devs={filteredDevList} />
         </Route>
         <Route path="/saved">
-<<<<<<< HEAD
-          <SavedGames handleAddGame={handleAddGame} games={games} />
-=======
-          <SavedGames 
-            games={savedGames} 
+          <SavedGames
+            games={savedGames}
             handleRemove={handleRemove}
+            handleAddGame={handleAddGame}
           />
         </Route>
         <Route path="/saved:id/edit">
           <EditGame />
->>>>>>> main
         </Route>
       </Switch>
     </div>

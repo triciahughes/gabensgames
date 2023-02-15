@@ -1,7 +1,7 @@
 import GameItem from "./GameItem";
 import { useState } from "react";
 
-function SavedGames({ games, handleAddGame }) {
+function SavedGames({ games, handleAddGame, handleRemove }) {
   const initialFormValues = {
     name: "",
     url: "",
@@ -12,16 +12,8 @@ function SavedGames({ games, handleAddGame }) {
 
   const [formData, setFormData] = useState(initialFormValues);
 
-<<<<<<< HEAD
-=======
-function SavedGames({ games, handleRemove }) {
->>>>>>> main
   const gameList = games.map((gameObj) => (
-    <GameItem 
-      key={gameObj.id} 
-      game={gameObj} 
-      handleRemove={handleRemove} 
-    />
+    <GameItem key={gameObj.id} game={gameObj} handleRemove={handleRemove} />
   ));
 
   const handleInput = (e) => {
