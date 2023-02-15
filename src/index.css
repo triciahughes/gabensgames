@@ -5,10 +5,6 @@
   width: 350px;
 }
 
-main {
-  color: white;
-}
-
 header {
   box-sizing: border-box;
   position: absolute;
@@ -54,12 +50,20 @@ body {
 /* NavBar */
 
 .navbar a {
-  color: black;
   float: left;
   font-size: 20px;
   padding: 16px;
   text-align: center;
   text-decoration: none;
+  /* color: black;  this will overide the 'active' styling below  if set :/ */ 
+}
+
+.navbar a:hover {
+  color: white;
+}
+
+.active {
+  color: white;
 }
 
 .navbar {
