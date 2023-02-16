@@ -1,7 +1,7 @@
 {
   "games": [
     {
-      "name": "Grand Theft Auto V",
+      "name": "Grand Theft Auto VVV",
       "id": 3498,
       "genres": [
         {
@@ -28,21 +28,65 @@
       "background_image": "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
     },
     {
-      "name": "yoyoyoyop",
+      "name": "Borderlands 2",
+      "id": 802,
       "genres": [
         {
-          "name": "Real-time strategy (RTS)"
+          "id": 4,
+          "name": "Action",
+          "slug": "action",
+          "games_count": 174823,
+          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
         },
         {
-          "name": "Role-playing (RPG, ARPG, and More)"
+          "id": 2,
+          "name": "Shooter",
+          "slug": "shooter",
+          "games_count": 61790,
+          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
+        },
+        {
+          "id": 5,
+          "name": "RPG",
+          "slug": "role-playing-games-rpg",
+          "games_count": 52935,
+          "image_background": "https://media.rawg.io/media/games/5a4/5a44112251d70a25291cc33757220fce.jpg"
         }
       ],
-      "metacritic": 23,
       "esrb_rating": {
-        "name": "Everyone 10+"
+        "id": 4,
+        "name": "Mature",
+        "slug": "mature"
       },
-      "background_image": "dnj",
-      "id": 3499
+      "metacritic": 89,
+      "background_image": "https://media.rawg.io/media/games/49c/49c3dfa4ce2f6f140cc4825868e858cb.jpg"
+    },
+    {
+      "name": "DOOM (2016)",
+      "id": 2454,
+      "genres": [
+        {
+          "id": 4,
+          "name": "Action",
+          "slug": "action",
+          "games_count": 174823,
+          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Shooter",
+          "slug": "shooter",
+          "games_count": 61790,
+          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
+        }
+      ],
+      "esrb_rating": {
+        "id": 4,
+        "name": "Mature",
+        "slug": "mature"
+      },
+      "metacritic": 85,
+      "background_image": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
     }
   ]
 }
