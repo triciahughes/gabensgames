@@ -6,6 +6,11 @@ function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
   const ratingString =
     `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
 
+  let gamePageButttonText;
+  if (savedGameIds) {
+    gamePageButttonText = savedGameIds.includes(id) ? 'Saved' : 'Save Game'; 
+  };
+
   const history = useHistory();
 
 
