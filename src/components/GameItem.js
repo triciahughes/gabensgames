@@ -11,7 +11,6 @@ function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
 
   const history = useHistory();
 
-
   function handleClickRemove() {
     fetch(`http://localhost:3000/games/${id}`, {
       method: "DELETE",
