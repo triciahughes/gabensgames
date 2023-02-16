@@ -74,8 +74,13 @@ function EditGame({ onUpdateGame }) {
   }
 
   return (
-    <div>
-      <form onSubmit={submitEdit} autoComplete="off">
+    <div className="new-form-container">
+      <img src={background_image}></img>
+      <form 
+        onSubmit={submitEdit} 
+        autoComplete="off"
+        className="new-form"
+      >
         <label htmlFor="title">Game Title: </label>
         <input
           id="name"
@@ -87,6 +92,7 @@ function EditGame({ onUpdateGame }) {
         <br></br>
         <label htmlFor="genres">Genres: </label>
         <Multiselect
+          className="multiselect"
           displayValue={'name'}
           isObject={true}
           options={multiselectOptions}
