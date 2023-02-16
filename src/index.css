@@ -63,7 +63,10 @@ header {
   padding: 16px;
   text-align: center;
   text-decoration: none;
-  /* color: black;  this will overide the 'active' styling below  if set :/ */ 
+}
+
+nav a {
+  color: black;
 }
 
 .navbar a:hover {

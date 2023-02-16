@@ -80,6 +80,33 @@
       },
       "metacritic": 85,
       "background_image": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
+    },
+    {
+      "name": "Team Fortress 2",
+      "id": 11859,
+      "genres": [
+        {
+          "id": 4,
+          "name": "Action",
+          "slug": "action",
+          "games_count": 174823,
+          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Shooter",
+          "slug": "shooter",
+          "games_count": 61790,
+          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
+        }
+      ],
+      "esrb_rating": {
+        "id": 4,
+        "name": "Mature",
+        "slug": "mature"
+      },
+      "metacritic": 92,
+      "background_image": "https://media.rawg.io/media/games/46d/46d98e6910fbc0706e2948a7cc9b10c5.jpg"
     }
   ]
 }

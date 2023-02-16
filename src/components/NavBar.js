@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function NavBar({ handleSearchChange, searchInput }) {
   return (
     <header>
-      <div className="navbar">
+      <nav className="navbar">
         <NavLink to="/games">Games</NavLink>
         <NavLink to="/developers">Developers</NavLink>
         <NavLink to="/saved">My Saved Games</NavLink>
@@ -15,7 +15,7 @@ function NavBar({ handleSearchChange, searchInput }) {
           type="text"
           placeholder="Search..."
         />
-      </div>
+      </nav>
     </header>
   );
 }
