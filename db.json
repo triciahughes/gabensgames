@@ -82,18 +82,31 @@
       "background_image": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
     },
     {
-      "name": "Elden Ring",
+      "name": "Team Fortress 2",
+      "id": 11859,
       "genres": [
         {
-          "name": "Role-playing (RPG, ARPG, and More)"
+          "id": 4,
+          "name": "Action",
+          "slug": "action",
+          "games_count": 174823,
+          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Shooter",
+          "slug": "shooter",
+          "games_count": 61790,
+          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
         }
       ],
-      "metacritic": 96,
       "esrb_rating": {
-        "name": "Mature"
+        "id": 4,
+        "name": "Mature",
+        "slug": "mature"
       },
-      "background_image": "https://stevivor.com/wp-content/uploads/2022/02/elden-ring.jpg",
-      "id": 5680
+      "metacritic": 92,
+      "background_image": "https://media.rawg.io/media/games/46d/46d98e6910fbc0706e2948a7cc9b10c5.jpg"
     }
   ]
 }

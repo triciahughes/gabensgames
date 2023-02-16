@@ -13,8 +13,7 @@
 }
 
 body {
-  animation: gradient 15s ease infinite;
-  background-size: 400% 400%;
+  background-size: cover;
   padding-top: 60px;
   background: 
     linear-gradient(-45deg, 
@@ -22,24 +21,6 @@ body {
                     var(--background-gray), 
                     var(--background-gray), 
                     var(--background-blue));
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@media (max-width: 700px) {
-  .cards-item {
-    width: 50%;
-  }
 }
 
 /* NavBar */
@@ -73,6 +54,7 @@ header {
   text-align: center;
   top: 0;
   width: 100%;
+  z-index: 99;
 }
 
 .navbar a {
@@ -81,7 +63,10 @@ header {
   padding: 16px;
   text-align: center;
   text-decoration: none;
-  /* color: black;  this will overide the 'active' styling below  if set :/ */ 
+}
+
+nav a {
+  color: black;
 }
 
 .navbar a:hover {
@@ -100,8 +85,7 @@ header {
   box-sizing: border-box;
   float: right;
   height: 28px;
-  margin-right: 10px;
-  margin-top: 10px;
+  margin: 10px 10px 0 0;
   padding-left: 10px;
   width: 447px;
 }
@@ -111,6 +95,7 @@ header {
 .game-list {
   margin: 0 auto;
   text-align: center;
+  min-height: 100vh;
 }
 
 .game-list li {
@@ -128,7 +113,6 @@ header {
   flex-direction: column;
   height: 500px;
   overflow: hidden;
-  z-index: 0;
   height: 500px;
   border: 1px solid whitesmoke;
 }
@@ -240,15 +224,48 @@ header {
 
 /* DeveloperItem */
 
+.dev-list-container {
+  width: 100%;
+}
+
+.dev-list {
+  list-style: none;
+}
+
 .dev-card {
-  background-repeat: no-repeat;
   background-size: cover;
+  width: 75%;
+  margin: auto;
+  margin-top: 100px;
+  display: fle x;
+}
+
+.dev-card h1 {
+  text-size-adjust: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dev-card h2 {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dev-card-content {
   background-color: black;
   color: white;
   opacity: 0.75;
+}
+
+.dev-card ul {
+  list-style: none;
+  margin: auto;
+  text-align: center;
+}
+
+.dev-card ul li {
+  margin: auto;
+  font-size: 2em;
 }
 
 /* SavedGames */

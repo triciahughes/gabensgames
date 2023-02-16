@@ -14,7 +14,7 @@ function Games({ games, savedGames, handleSave, handleRemove }) {
   ));
 
   return (
-    <div id="game-list">
+    <div className="game-list-container">
       <ul className="game-list">{gameList}</ul>
     </div>
   );
