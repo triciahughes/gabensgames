@@ -6,10 +6,13 @@ function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
   const ratingString =
     `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
 
+  console.log('yo', savedGameIds)
+
   let gamePageButttonText;
   if (savedGameIds) {
     gamePageButttonText = savedGameIds.includes(id) ? 'Saved' : 'Save Game'; 
   };
+  console.log(gamePageButttonText)
 
   const history = useHistory();
 
@@ -24,17 +27,15 @@ function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
     history.push(`/saved${id}/edit`);
   }
 
-  // const history = useHistory();
-
   function handleClickRemove() {
     fetch(`http://localhost:3000/games/${id}`, {
       method: "DELETE",
     }).then(() => handleRemove(id));
   }
 
-  // function handleClickEdit() {
-  //   history.push(`/saved${id}/edit`);
-  // }
+  function handleClickEdit() {
+    history.push(`/saved${id}/edit`);
+  }
 
   function handleClickSave() {
     const gameData = {
@@ -76,7 +77,7 @@ function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
           </p>
           {useRouteMatch().url == "/games" ? (
             <button onClick={handleClickSave} className="button-save">
-              Save Game
+              {gamePageButttonText}
             </button>
           ) : (
             <div className="button-container">
