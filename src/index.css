@@ -1,3 +1,10 @@
+:root {
+  --background-red: #8D3F3F;
+  --background-blue: #2D75BC;
+  --background-gray: #7B7C7E;
+  --gray: #494949;
+}
+
 /* App */
 
 .headerImg {
@@ -5,28 +12,16 @@
   width: 350px;
 }
 
-header {
-  box-sizing: border-box;
-  position: absolute;
-  background-color: rgba(217, 217, 217, 1);
-  border: 1px solid #fffbfb;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 100%;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  opacity: 1;
-}
-
 body {
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
-  background: linear-gradient(-45deg, #8a64d6, #729efd, #3acadf, #0cead9);
-  height: 100vh;
   padding-top: 60px;
+  background: 
+    linear-gradient(-45deg, 
+                    var(--background-red), 
+                    var(--background-gray), 
+                    var(--background-gray), 
+                    var(--background-blue));
 }
 
 @keyframes gradient {
@@ -49,6 +44,37 @@ body {
 
 /* NavBar */
 
+.navbar {
+  background-color: #7B7D80;
+  border: 1px solid white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  display: inline;
+  height: 60px;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+
+header {
+  border: 1px solid #fffbfb;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  height: 60px;
+  left: 0;
+  position: absolute;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+
 .navbar a {
   float: left;
   font-size: 20px;
@@ -66,27 +92,10 @@ body {
   color: white;
 }
 
-.navbar {
-  background-color: #3acadf;
-  border: 1px solid #fffbfb;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  display: inline;
-  height: 60px;
-  left: 0;
-  opacity: 1;
-  position: absolute;
-  position: fixed;
-  right: 0;
-  text-align: center;
-  top: 0;
-  width: 100%;
-}
-
 .search {
   background: rgba(217, 217, 217, 0.5);
   border-radius: 20px;
-  border: 2px solid #fff8f8;
+  border: 2px solid whitesmoke;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   float: right;
@@ -112,7 +121,7 @@ body {
 /* GameItem */
 
 .card {
-  background-color: white;
+  background-color: var(--gray);
   border-radius: 0.25rem;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -121,13 +130,15 @@ body {
   overflow: hidden;
   z-index: 0;
   height: 500px;
+  border: 1px solid whitesmoke;
 }
 
 .card img {
   float: left;
   height: 300px;
   object-fit: cover;
-  width: 500px;
+  width: 100%;
+  border: 1px solid whitesmoke;
 }
 
 .card-content {
@@ -135,6 +146,7 @@ body {
   flex-direction: column;
   flex: 1 1 auto;
   padding: 1rem;
+  height: 100px;
 }
 
 .cards-item {
@@ -155,20 +167,14 @@ body {
   transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
 }
 
-.button-save {
-  margin: auto;
-  border-radius: 8px;
-  border: 2px solid #3acadf;
-  background-color: #5c3a92;
-}
-
 .card-title {
-  color: #696969;
+  color: whitesmoke;
   font-size: 1.25rem;
   font-weight: 300;
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
+  margin-top: 0;
 }
 
 .card-text,
@@ -182,11 +188,21 @@ body {
 .card-detail {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  color: whitesmoke;
 }
+
+.card-detail ul {
+  /* width: 10px; */
+  text-align: center;
+}
+
+/* .card-detail ul li {
+  margin: auto;
+} */
 
 .card-detail i {
   text-align: center;
-  font-family: sans-serif;
+  font-family: 'Trebuchet MS';
 }
 
 .button-container {
@@ -196,14 +212,15 @@ body {
 .button-save,
 .button-edit,
 .button-remove {
-  background-color: #5C3A92;
+  background-color: whitesmoke;
   border-radius: 8px;
-  border: 2px solid #3ACADF;
+  border: 2px solid whitemoke;
   margin: auto;
   transition-duration: 0.4s;
-  color: whitesmoke;
+  color: black;
   max-width: 30%;
   transition-duration: 0.4s;
+  font-family: 'Trebuchet MS';
 }
 
 .button-edit, 
@@ -235,6 +252,61 @@ body {
 }
 
 /* SavedGames */
+
+.new-form-container {
+  text-align: center;
+  border: 1px solid whitesmoke;
+  background-color: var(--gray);
+  width: 50%;
+  margin: auto;
+}
+
+.new-form {
+  color: whitesmoke;
+  font-family: 'Trebuchet MS';
+}
+
+.multiselect-container {
+  width: 50%;
+  margin: auto;
+}
+
+.multiselect {
+  /* width: 50%; */
+}
+
+.new-form input[name="name"] {
+  width: 300px;
+}
+
+.new-form input[name="metacritic"] {
+  width: 40px;
+}
+
+.new-form input[name="rating"] {
+  width: 125px;
+}
+
+.new-form input[name="background_image"] {
+  width: 500px;
+}
+
+.new-form input {
+  margin: 10px;
+}
+
+.new-form button {
+  background-color: whitesmoke;
+  border-radius: 8px;
+  border: 2px solid whitemoke;
+  margin: auto;
+  transition-duration: 0.4s;
+  color: black;
+  max-width: 30%;
+  transition-duration: 0.4s;
+  font-family: 'Trebuchet MS';
+  margin: 15px;
+}
 
 /* Edit Game */
 
