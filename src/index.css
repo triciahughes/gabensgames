@@ -1,3 +1,10 @@
+:root {
+  --background-red: #8D3F3F;
+  --background-blue: #2D75BC;
+  --background-gray: #7B7C7E;
+  --gray: #494949;
+}
+
 /* App */
 
 .headerImg {
@@ -8,8 +15,13 @@
 body {
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
-  background: linear-gradient(-45deg, #8D3F3F, #7B7C7E, #7B7C7E, #2D75BC);
   padding-top: 60px;
+  background: 
+    linear-gradient(-45deg, 
+                    var(--background-red), 
+                    var(--background-gray), 
+                    var(--background-gray), 
+                    var(--background-blue));
 }
 
 @keyframes gradient {
@@ -69,10 +81,8 @@ header {
   padding: 16px;
   text-align: center;
   text-decoration: none;
-  /* color: black; */
   /* color: black;  this will overide the 'active' styling below  if set :/ */ 
 }
-
 
 .navbar a:hover {
   color: white;
@@ -82,12 +92,10 @@ header {
   color: white;
 }
 
-
-
 .search {
   background: rgba(217, 217, 217, 0.5);
   border-radius: 20px;
-  border: 2px solid #fff8f8;
+  border: 2px solid whitesmoke;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   float: right;
@@ -113,7 +121,7 @@ header {
 /* GameItem */
 
 .card {
-  background-color: #7B7D80;
+  background-color: var(--gray);
   border-radius: 0.25rem;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -187,7 +195,7 @@ header {
 
 .card-detail i {
   text-align: center;
-  font-family: sans-serif;
+  font-family: 'Trebuchet MS';
 }
 
 .button-container {
@@ -205,6 +213,7 @@ header {
   color: black;
   max-width: 30%;
   transition-duration: 0.4s;
+  font-family: 'Trebuchet MS';
 }
 
 .button-edit, 
@@ -236,6 +245,61 @@ header {
 }
 
 /* SavedGames */
+
+.new-form-container {
+  text-align: center;
+  border: 1px solid whitesmoke;
+  background-color: var(--gray);
+  width: 50%;
+  margin: auto;
+}
+
+.new-form {
+  color: whitesmoke;
+  font-family: 'Trebuchet MS';
+}
+
+.multiselect-container {
+  width: 50%;
+  margin: auto;
+}
+
+.multiselect {
+  /* width: 50%; */
+}
+
+.new-form input[name="name"] {
+  width: 300px;
+}
+
+.new-form input[name="metacritic"] {
+  width: 40px;
+}
+
+.new-form input[name="rating"] {
+  width: 125px;
+}
+
+.new-form input[name="background_image"] {
+  width: 500px;
+}
+
+.new-form input {
+  margin: 10px;
+}
+
+.new-form button {
+  background-color: whitesmoke;
+  border-radius: 8px;
+  border: 2px solid whitemoke;
+  margin: auto;
+  transition-duration: 0.4s;
+  color: black;
+  max-width: 30%;
+  transition-duration: 0.4s;
+  font-family: 'Trebuchet MS';
+  margin: 15px;
+}
 
 /* Edit Game */
 

@@ -61,8 +61,12 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
 
   return (
     <>
-      <div>
-        <form onSubmit={handleSubmit} autoComplete="off">
+      <div className="new-form-container">
+        <form 
+          onSubmit={handleSubmit} 
+          autoComplete="off" 
+          className="new-form"
+        >
           <label htmlFor="title">Game Title: </label>
           <input
             type="text"
@@ -71,41 +75,26 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
             value={formData.name}
             onChange={handleInput}
           />
-          <br></br>
-          <label htmlFor="genres">Genres: </label>
-          <Multiselect
-            // id={formData.genre}
-            // name="genre"
-            selectedValues={formData.genres}
-            isObject={false}
-            onKeyPressFn={function noRefCheck() {}}
-            // onRemove={handleOnRemove}
-            // onSearch={function noRefCheck() {}}
-            onSelect={handleOnSelect}
-            //onChange={handleInput}
-            options={[
-              "Sandbox",
-              "Real-time strategy (RTS)",
-              "Shooter",
-              "MOBA",
-              "Role-playing (RPG, ARPG, and More)",
-              "Simulation and sports",
-              "Puzzlers and party games",
-              "Action-adventure",
-              "Survival and horror",
-              "Platformer",
-            ]}
-          />
-          <br></br>
-          <label htmlFor="metacritic">Metacritic: </label>
+          <br />
+          <label htmlFor="img">Image Url: </label>
           <input
             type="text"
+            id={formData.url}
+            name="background_image"
+            value={formData.background_image}
+            onChange={handleInput}
+          />
+          <br />
+          <label htmlFor="metacritic">Metacritic: </label>
+          <input
+            type="number"
+            min="0"
+            max="100"
             id={formData.metacritic}
             name="metacritic"
             value={formData.metacritic}
             onChange={handleInput}
           />
-          <br></br>
           <label htmlFor="esrb_rating">ESRB: </label>
           <select
             id={formData.esrb_rating}
@@ -122,16 +111,29 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
             <option>Adults Only</option>
             <option>Rating Pending</option>
           </select>
-          <br></br>
-          <label htmlFor="img">Image Url: </label>
-          <input
-            type="text"
-            id={formData.url}
-            name="background_image"
-            value={formData.background_image}
-            onChange={handleInput}
-          />
-          <br></br>
+          
+          <div className="multiselect-container">
+            <label htmlFor="genres">Genres: </label>
+            <Multiselect
+              className="multiselect"
+              selectedValues={formData.genres}
+              isObject={false}
+              onKeyPressFn={function noRefCheck() {}}
+              onSelect={handleOnSelect}
+              options={[
+                "Sandbox",
+                "Real-time strategy (RTS)",
+                "Shooter",
+                "MOBA",
+                "Role-playing (RPG, ARPG, and More)",
+                "Simulation and sports",
+                "Puzzlers and party games",
+                "Action-adventure",
+                "Survival and horror",
+                "Platformer",
+              ]}
+            />
+          </div>
           <button type="submit">Add Game</button>
         </form>
       </div>
