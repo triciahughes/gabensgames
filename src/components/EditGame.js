@@ -66,6 +66,7 @@ function EditGame({ onUpdateGame }) {
   const selectedGenres = genres.map((genre) => genre.name);
 
   const handleOnSelect = (item1) => setFormData({ ...formData, genres: item1 });
+  //   const handleRemove = () =>
 
   return (
     <div>
@@ -86,7 +87,7 @@ function EditGame({ onUpdateGame }) {
           selectedValues={selectedGenres}
           isObject={false}
           onKeyPressFn={function noRefCheck() {}}
-          // onRemove={handleOnRemove}
+          //onRemove={handleOnRemove}
           // onSearch={function noRefCheck() {}}
           onSelect={handleOnSelect}
           options={[
