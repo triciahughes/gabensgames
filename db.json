@@ -1,33 +1,6 @@
 {
   "games": [
     {
-      "name": "BioShock",
-      "id": 4286,
-      "genres": [
-        {
-          "id": 4,
-          "name": "Action",
-          "slug": "action",
-          "games_count": 174823,
-          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-        },
-        {
-          "id": 2,
-          "name": "Shooter",
-          "slug": "shooter",
-          "games_count": 61790,
-          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-        }
-      ],
-      "esrb_rating": {
-        "id": 4,
-        "name": "Mature",
-        "slug": "mature"
-      },
-      "metacritic": 96,
-      "background_image": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg"
-    },
-    {
       "name": "Grand Theft Auto V",
       "id": 3498,
       "genres": [
@@ -55,42 +28,22 @@
       "background_image": "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
     },
     {
-      "name": "Portal 2",
-      "id": 4200,
+      "name": "The Elder Scrolls V: Skyrim",
+      "id": 5679,
       "genres": [
         {
-          "id": 2,
-          "name": "Shooter",
-          "slug": "shooter",
-          "games_count": 61790,
+          "id": 4,
+          "name": "Action",
+          "slug": "action",
+          "games_count": 174823,
           "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
         },
         {
-          "id": 7,
-          "name": "Puzzle",
-          "slug": "puzzle",
-          "games_count": 98617,
-          "image_background": "https://media.rawg.io/media/games/4cb/4cb855e8ef1578415a928e53c9f51867.png"
-        }
-      ],
-      "esrb_rating": {
-        "id": 2,
-        "name": "Everyone 10+",
-        "slug": "everyone-10-plus"
-      },
-      "metacritic": 95,
-      "background_image": "https://media.rawg.io/media/games/328/3283617cb7d75d67257fc58339188742.jpg"
-    },
-    {
-      "name": "Life is Strange",
-      "id": 3439,
-      "genres": [
-        {
-          "id": 3,
-          "name": "Adventure",
-          "slug": "adventure",
-          "games_count": 134244,
-          "image_background": "https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg"
+          "id": 5,
+          "name": "RPG",
+          "slug": "role-playing-games-rpg",
+          "games_count": 52935,
+          "image_background": "https://media.rawg.io/media/games/5a4/5a44112251d70a25291cc33757220fce.jpg"
         }
       ],
       "esrb_rating": {
@@ -98,8 +51,49 @@
         "name": "Mature",
         "slug": "mature"
       },
-      "metacritic": 83,
-      "background_image": "https://media.rawg.io/media/games/562/562553814dd54e001a541e4ee83a591c.jpg"
+      "metacritic": 94,
+      "background_image": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+    },
+    {
+      "name": "DOOM (2016)",
+      "id": 2454,
+      "genres": [
+        {
+          "id": 4,
+          "name": "Action",
+          "slug": "action",
+          "games_count": 174823,
+          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Shooter",
+          "slug": "shooter",
+          "games_count": 61790,
+          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
+        }
+      ],
+      "esrb_rating": {
+        "id": 4,
+        "name": "Mature",
+        "slug": "mature"
+      },
+      "metacritic": 85,
+      "background_image": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
+    },
+    {
+      "name": "Elden Ring",
+      "genres": [
+        {
+          "name": "Role-playing (RPG, ARPG, and More)"
+        }
+      ],
+      "metacritic": 96,
+      "esrb_rating": {
+        "name": "Mature"
+      },
+      "background_image": "https://stevivor.com/wp-content/uploads/2022/02/elden-ring.jpg",
+      "id": 5680
     }
   ]
 }
