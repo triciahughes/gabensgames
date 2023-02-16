@@ -14,6 +14,7 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
   };
 
   const [formData, setFormData] = useState(initialFormValues);
+  const [showForm, setShowForm] = useState(false);
 
   const gameList = games.map((gameObj) => (
     <GameItem key={gameObj.id} game={gameObj} handleRemove={handleRemove} />
@@ -59,9 +60,19 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
     setFormData(initialFormValues);
   };
 
+  function handleClickToggle() {
+    setShowForm(showForm => !showForm);
+  }
+
   return (
     <>
-      <div className="new-form-container">
+      <button 
+        className="toggle-form" 
+        onClick={handleClickToggle} 
+      >
+        {showForm ? 'Close Form' : 'Add New Game'}
+      </button>
+      {showForm ? (<div className="new-form-container">
         <form 
           onSubmit={handleSubmit} 
           autoComplete="off" 
@@ -137,6 +148,7 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
           <button type="submit">Add Game</button>
         </form>
       </div>
+      ) : null }
       <div id="game-list">
         <ul className="game-list">{gameList}</ul>
       </div>
