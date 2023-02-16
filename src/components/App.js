@@ -67,7 +67,11 @@ function App() {
       />
       <Switch>
         <Route path="/games">
-          <Games games={filteredGameList} handleSave={handleSave} />
+          <Games 
+            games={filteredGameList} 
+            savedGames={savedGames}
+            handleSave={handleSave} 
+          />
         </Route>
         <Route path="/developers">
           <Developers devs={filteredDevList} />
