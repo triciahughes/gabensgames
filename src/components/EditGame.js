@@ -4,7 +4,18 @@ import { useState, useEffect } from "react";
 
 function EditGame({ onUpdateGame }) {
   const { id } = useParams();
-
+  const multiselectOptions = [
+    "Sandbox",
+    "Real-time strategy (RTS)",
+    "Shooter",
+    "MOBA",
+    "Role-playing (RPG, ARPG, and More)",
+    "Simulation and sports",
+    "Puzzlers and party games",
+    "Action-adventure",
+    "Survival and horror",
+    "Platformer",
+  ].map(x => { return {name: x}}); 
   const initialState = {
     name: "",
     genres: [],
@@ -24,22 +35,30 @@ function EditGame({ onUpdateGame }) {
       .then((game) => setFormData(game));
   }, []);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  function handleChangeMultiselect(genresArr) {
+    const newGenres = genresArr.map(genreObj => { return { name: genreObj.name} });
+    setFormData({ ...formData, genres: newGenres });
+  }
+
+  function handleChange(e) {
+    let { name, value } = e.target;
+
+    if (name === 'metacritic') {
+      value = parseInt(value);
+    };
+    if (name == 'esrb_rating') {
+      value = { name: value};
+    };
+
     setFormData({ ...formData, [name]: value });
   };
 
   function submitEdit(e) {
     e.preventDefault();
 
-    const newGenreArray = genres.map((genre) => {
-      return { name: genre };
-    });
-    // const newEsrbObj = { name: esrb_rating };
-
     const newSavedGameData = {
       name: formData.name,
-      genres: newGenreArray,
+      genres: formData.genres,
       metacritic: parseInt(formData.metacritic),
       esrb_rating: formData.newEsrbObj,
       background_image: formData.background_image,
@@ -51,7 +70,7 @@ function EditGame({ onUpdateGame }) {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify(newSavedGameData),
+      body: JSON.stringify(formData),
     };
 
     fetch(`http://localhost:3000/games/${id}`, configObj)
@@ -60,55 +79,36 @@ function EditGame({ onUpdateGame }) {
         onUpdateGame(updatedGame);
         setFormData(initialState);
       });
-    //completeEditing();
   }
-
-  const selectedGenres = genres.map((genre) => genre.name);
-
-  const handleOnSelect = (item1) => setFormData({ ...formData, genres: item1 });
-  //   const handleRemove = () =>
 
   return (
     <div>
       <form onSubmit={submitEdit} autoComplete="off">
         <label htmlFor="title">Game Title: </label>
         <input
-          type="text"
           id="name"
           name="name"
+          type="text"
           value={name}
           onChange={handleChange}
         />
         <br></br>
         <label htmlFor="genres">Genres: </label>
         <Multiselect
-          // id={formData.genre}
-          // name="genre"
-          selectedValues={selectedGenres}
-          isObject={false}
+          displayValue={'name'}
+          isObject={true}
+          options={multiselectOptions}
+          selectedValues={genres}
           onKeyPressFn={function noRefCheck() {}}
-          //onRemove={handleOnRemove}
-          // onSearch={function noRefCheck() {}}
-          onSelect={handleOnSelect}
-          options={[
-            "Sandbox",
-            "Real-time strategy (RTS)",
-            "Shooter",
-            "MOBA",
-            "Role-playing (RPG, ARPG, and More)",
-            "Simulation and sports",
-            "Puzzlers and party games",
-            "Action-adventure",
-            "Survival and horror",
-            "Platformer",
-          ]}
+          onRemove={handleChangeMultiselect}
+          onSelect={handleChangeMultiselect}
         />
         <br></br>
         <label htmlFor="metacritic">Metacritic: </label>
         <input
-          type="text"
           id="{formData.metacritic}"
           name="metacritic"
+          type="text"
           value={metacritic}
           onChange={handleChange}
         />
@@ -129,7 +129,7 @@ function EditGame({ onUpdateGame }) {
           <option>Adults Only</option>
           <option>Rating Pending</option>
         </select>
-        <br></br>
+        <br />
         <label htmlFor="img">Image Url: </label>
         <input
           type="text"
@@ -138,7 +138,7 @@ function EditGame({ onUpdateGame }) {
           value={background_image}
           onChange={handleChange}
         />
-        <br></br>
+        <br />
         <button type="submit">Save Game</button>
       </form>
     </div>
