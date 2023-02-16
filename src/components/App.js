@@ -14,6 +14,7 @@ function App() {
   const [savedGames, setSavedGames] = useState([]);
   const [devs, setDevs] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const [gameId, setGameId] = useState(null);
   const history = useHistory();
 
   //////// Data Fetching ///////
@@ -59,6 +60,37 @@ function App() {
     setSavedGames((savedGames) => [...savedGames, formData]);
   };
 
+  const onUpdateGame = (updatedGame) => {
+    const updatedGameList = savedGames.map((oldGame) => {
+      if (updatedGame.id === oldGame.id) {
+        return updatedGame;
+      } else {
+        return oldGame;
+      }
+    });
+    setSavedGames(updatedGameList);
+  };
+
+  const completeEditing = () => {
+    setGameId(null);
+  };
+
+  // const enterGameEditModeFor = (gameId) => {
+  //   setGameId(gameId);
+  // };
+
+  // const renderForm = () => {
+  //   if (gameId) {
+  //     return (
+  //       <EditGame
+  //         gameId={gameId}
+  //         completeEditing={completeEditing}
+  //         onUpdateGame={onUpdateGame}
+  //       />
+  //     );
+  //   }
+  // };
+
   return (
     <div>
       <NavBar
@@ -67,10 +99,10 @@ function App() {
       />
       <Switch>
         <Route path="/games">
-          <Games 
-            games={filteredGameList} 
+          <Games
+            games={filteredGameList}
             savedGames={savedGames}
-            handleSave={handleSave} 
+            handleSave={handleSave}
           />
         </Route>
         <Route path="/developers">
@@ -84,7 +116,11 @@ function App() {
           />
         </Route>
         <Route path="/saved:id/edit">
-          <EditGame />
+          <EditGame
+            gameId={gameId}
+            completeEditing={completeEditing}
+            onUpdateGame={onUpdateGame}
+          />
         </Route>
       </Switch>
     </div>

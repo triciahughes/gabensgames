@@ -6,16 +6,12 @@ function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
   const ratingString =
     `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
 
-  console.log('yo', savedGameIds)
-
   let gamePageButttonText;
   if (savedGameIds) {
-    gamePageButttonText = savedGameIds.includes(id) ? 'Saved' : 'Save Game'; 
-  };
-  console.log(gamePageButttonText)
+    gamePageButttonText = savedGameIds.includes(id) ? "Saved" : "Save Game";
+  }
 
   const history = useHistory();
-
 
   function handleClickRemove() {
     fetch(`http://localhost:3000/games/${id}`, {
