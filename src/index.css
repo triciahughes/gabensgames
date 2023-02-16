@@ -286,6 +286,11 @@ nav a {
 .multiselect-container {
   width: 50%;
   margin: auto;
+  color: black;
+}
+
+.multiselect-container label {
+  color: whitesmoke;
 }
 
 .multiselect {
