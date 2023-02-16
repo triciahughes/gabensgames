@@ -68,7 +68,7 @@ function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
             <ul>
               {genres.map(genreObj => {
                 return (
-                  <div key={genreObj.id}>
+                  <div key={genreObj.name}>
                     <li >{genreObj.name}</li>
                     <br/>
                   </div>

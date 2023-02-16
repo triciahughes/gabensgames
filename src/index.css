@@ -21,6 +21,7 @@ body {
                     var(--background-gray), 
                     var(--background-gray), 
                     var(--background-blue));
+  min-height: 100vh;
 }
 
 /* NavBar */
@@ -95,7 +96,6 @@ nav a {
 .game-list {
   margin: 0 auto;
   text-align: center;
-  min-height: 100vh;
 }
 
 .game-list li {
@@ -176,13 +176,8 @@ nav a {
 }
 
 .card-detail ul {
-  /* width: 10px; */
   text-align: center;
 }
-
-/* .card-detail ul li {
-  margin: auto;
-} */
 
 .card-detail i {
   text-align: center;
@@ -268,7 +263,21 @@ nav a {
   font-size: 2em;
 }
 
-/* SavedGames */
+/* Saved */
+
+.toggle-form {
+  background-color: whitesmoke;
+  border-radius: 8px;
+  border: 2px solid whitemoke;
+  margin: auto;
+  transition-duration: 0.4s;
+  color: black;
+  max-width: 30%;
+  transition-duration: 0.4s;
+  font-family: 'Trebuchet MS';
+}
+
+/* Form */
 
 .new-form-container {
   text-align: center;
@@ -276,6 +285,12 @@ nav a {
   background-color: var(--gray);
   width: 50%;
   margin: auto;
+}
+
+.new-form-container img {
+  width: 50%;
+  margin: 10px;
+  border: 1px solid whitesmoke;
 }
 
 .new-form {
@@ -329,8 +344,6 @@ nav a {
   font-family: 'Trebuchet MS';
   margin: 15px;
 }
-
-/* Edit Game */
 
 
 
