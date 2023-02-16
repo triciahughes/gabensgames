@@ -80,20 +80,6 @@
       },
       "metacritic": 85,
       "background_image": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-    },
-    {
-      "name": "Elden Ring",
-      "genres": [
-        {
-          "name": "Role-playing (RPG, ARPG, and More)"
-        }
-      ],
-      "metacritic": 96,
-      "esrb_rating": {
-        "name": "Mature"
-      },
-      "background_image": "https://stevivor.com/wp-content/uploads/2022/02/elden-ring.jpg",
-      "id": 5680
     }
   ]
 }
