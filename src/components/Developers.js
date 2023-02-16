@@ -9,8 +9,8 @@ function Developers({ devs }) {
   });
 
   return (
-    <div id="dev-list">
-      <ul className="game-list">{devList}</ul>
+    <div className="dev-list-container">
+      <ul className="dev-list">{devList}</ul>
     </div>
   );
 }
