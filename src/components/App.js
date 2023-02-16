@@ -16,6 +16,7 @@ function App() {
   const [searchInput, setSearchInput] = useState("");
   const [gameId, setGameId] = useState(null);
   const history = useHistory();
+  const [sort, setSort] = useState("ALL");
 
   //////// Data Fetching ///////
   useEffect(() => {
@@ -38,31 +39,38 @@ function App() {
   function handleSearchChange(e) {
     setSearchInput(e.target.value);
   }
-  //////// Search Bar Filtered Lists ////////
+  //////// Filtered Lists ////////
   const filteredGameList = games.filter((game) => {
     return game.name.toLowerCase().includes(searchInput.toLowerCase());
   });
 
-  const filteredSaveGameList = savedGames.filter((game) => {
-    return game.name.toLowerCase().includes(searchInput.toLowerCase());
+  const sortFilter = filteredGameList.filter((game) => {
+    const goodName = game.genres.map((genre) => genre.name);
+    return goodName.includes(sort) || sort === "ALL";
   });
 
   const filteredDevList = devs.filter((dev) => {
     return dev.name.toLowerCase().includes(searchInput.toLowerCase());
   });
 
+  //////// Saved Games ////////
+  const filteredSaveGameList = savedGames.filter((game) => {
+    return game.name.toLowerCase().includes(searchInput.toLowerCase());
+  });
+
   function handleSave(gameData) {
     setSavedGames((currentState) => [...currentState, gameData]);
   }
+
+  //////// Add && Remove Games && Update////////
+  const handleAddGame = (formData) => {
+    setSavedGames((savedGames) => [...savedGames, formData]);
+  };
 
   function handleRemove(id) {
     const newSavedGames = savedGames.filter((gameObj) => gameObj.id !== id);
     setSavedGames(newSavedGames);
   }
-
-  const handleAddGame = (formData) => {
-    setSavedGames((savedGames) => [...savedGames, formData]);
-  };
 
   const onUpdateGame = (updatedGame) => {
     const updatedGameList = savedGames.map((oldGame) => {
@@ -79,21 +87,15 @@ function App() {
     setGameId(null);
   };
 
-  // const enterGameEditModeFor = (gameId) => {
-  //   setGameId(gameId);
-  // };
+  //////// Sorting ////////
+  function handleSort(genreSort) {
+    setSort(genreSort);
+  }
 
-  // const renderForm = () => {
-  //   if (gameId) {
-  //     return (
-  //       <EditGame
-  //         gameId={gameId}
-  //         completeEditing={completeEditing}
-  //         onUpdateGame={onUpdateGame}
-  //       />
-  //     );
-  //   }
-  // };
+  function handleSortChange(e) {
+    const genreSort = e.target.value;
+    handleSort(genreSort);
+  }
 
   return (
     <div>
@@ -104,9 +106,10 @@ function App() {
       <Switch>
         <Route path="/games">
           <Games
-            games={filteredGameList}
+            games={sortFilter}
             savedGames={savedGames}
             handleSave={handleSave}
+            handleSortChange={handleSortChange}
           />
         </Route>
         <Route path="/developers">
