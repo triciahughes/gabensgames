@@ -43,6 +43,10 @@ function App() {
     return game.name.toLowerCase().includes(searchInput.toLowerCase());
   });
 
+  const filteredSaveGameList = savedGames.filter((game) => {
+    return game.name.toLowerCase().includes(searchInput.toLowerCase());
+  });
+
   const filteredDevList = devs.filter((dev) => {
     return dev.name.toLowerCase().includes(searchInput.toLowerCase());
   });
@@ -110,7 +114,7 @@ function App() {
         </Route>
         <Route path="/saved">
           <SavedGames
-            games={savedGames}
+            games={filteredSaveGameList}
             handleRemove={handleRemove}
             handleAddGame={handleAddGame}
           />

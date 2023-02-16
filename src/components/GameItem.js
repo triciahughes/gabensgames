@@ -2,14 +2,12 @@ import { useRouteMatch, useHistory } from "react-router-dom";
 
 function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
   const { name, id, genres, esrb_rating, metacritic, background_image } = game;
-  const genreString = Array.from(genres.map((genre) => genre.name)).join(", ");
-  const ratingString =
-    `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
+  const ratingString = `metacritic: ${metacritic}` + "\n" + `ESRB: ${esrb_rating.name}`;
 
   let gamePageButttonText;
   if (savedGameIds) {
-    gamePageButttonText = savedGameIds.includes(id) ? "Saved" : "Save Game";
-  }
+    gamePageButttonText = savedGameIds.includes(id) ? 'Saved' : 'Save Game'; 
+  };
 
   const history = useHistory();
 
@@ -65,12 +63,22 @@ function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
       <div className="card">
         <img src={background_image} alt="Card image cap" styles="width:100%" />
         <div className="card-content">
-          <div className="card-title">{name}</div>
-          <p className="card-detail">
-            <i>{genreString}</i>
+          <h2 className="card-title"><u>{name}</u></h2>
+          <div className="card-detail">
+            <ul>
+              {genres.map(genreObj => {
+                return (
+                  <div key={genreObj.id}>
+                    <li >{genreObj.name}</li>
+                    <br/>
+                  </div>
+                );
+              })}
+            </ul>
             <br />
-            <i>{ratingString}</i>
-          </p>
+            <i>{`metacritic: ${metacritic}`}<br />{`ESRB: ${esrb_rating.name}`}</i>
+
+          </div>
           {useRouteMatch().url == "/games" ? (
             <button onClick={handleClickSave} className="button-save">
               {gamePageButttonText}
