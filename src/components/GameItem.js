@@ -69,7 +69,7 @@ function GameItem({ game, savedGameIds, handleSave, handleRemove }) {
       <div className="card">
         <img src={background_image} alt="Card image cap" styles="width:100%" />
         <div className="card-content">
-          <div className="card-title">{name}</div>
+          <div className="card-title"><u>{name}</u></div>
           <p className="card-detail">
             <i>{genreString}</i>
             <br />

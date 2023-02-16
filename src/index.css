@@ -5,27 +5,10 @@
   width: 350px;
 }
 
-header {
-  box-sizing: border-box;
-  position: absolute;
-  background-color: rgba(217, 217, 217, 1);
-  border: 1px solid #fffbfb;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 100%;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  opacity: 1;
-}
-
 body {
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
-  background: linear-gradient(-45deg, #8a64d6, #729efd, #3acadf, #0cead9);
-  height: 100vh;
+  background: linear-gradient(-45deg, #8D3F3F, #7B7C7E, #7B7C7E, #2D75BC);
   padding-top: 60px;
 }
 
@@ -49,26 +32,9 @@ body {
 
 /* NavBar */
 
-.navbar a {
-  float: left;
-  font-size: 20px;
-  padding: 16px;
-  text-align: center;
-  text-decoration: none;
-  /* color: black;  this will overide the 'active' styling below  if set :/ */ 
-}
-
-.navbar a:hover {
-  color: white;
-}
-
-.active {
-  color: white;
-}
-
 .navbar {
-  background-color: #3acadf;
-  border: 1px solid #fffbfb;
+  background-color: #7B7D80;
+  border: 1px solid white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   display: inline;
@@ -82,6 +48,41 @@ body {
   top: 0;
   width: 100%;
 }
+
+header {
+  border: 1px solid #fffbfb;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  height: 60px;
+  left: 0;
+  position: absolute;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  font-size: 20px;
+  padding: 16px;
+  text-align: center;
+  text-decoration: none;
+  /* color: black; */
+  /* color: black;  this will overide the 'active' styling below  if set :/ */ 
+}
+
+
+.navbar a:hover {
+  color: white;
+}
+
+.active {
+  color: white;
+}
+
+
 
 .search {
   background: rgba(217, 217, 217, 0.5);
@@ -112,7 +113,7 @@ body {
 /* GameItem */
 
 .card {
-  background-color: white;
+  background-color: #7B7D80;
   border-radius: 0.25rem;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -121,13 +122,15 @@ body {
   overflow: hidden;
   z-index: 0;
   height: 500px;
+  border: 1px solid whitesmoke;
 }
 
 .card img {
   float: left;
   height: 300px;
   object-fit: cover;
-  width: 500px;
+  width: 100%;
+  border: 1px solid whitesmoke;
 }
 
 .card-content {
@@ -135,6 +138,7 @@ body {
   flex-direction: column;
   flex: 1 1 auto;
   padding: 1rem;
+  height: 100px;
 }
 
 .cards-item {
@@ -155,15 +159,8 @@ body {
   transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
 }
 
-.button-save {
-  margin: auto;
-  border-radius: 8px;
-  border: 2px solid #3acadf;
-  background-color: #5c3a92;
-}
-
 .card-title {
-  color: #696969;
+  color: whitesmoke;
   font-size: 1.25rem;
   font-weight: 300;
   letter-spacing: 2px;
@@ -177,6 +174,10 @@ body {
   font-size: 0.875rem;
   line-height: 1.5;
   margin-bottom: 1.25rem;
+}
+
+.card-detail {
+  color: whitesmoke;
 }
 
 .card-detail {
@@ -196,12 +197,12 @@ body {
 .button-save,
 .button-edit,
 .button-remove {
-  background-color: #5C3A92;
+  background-color: whitesmoke;
   border-radius: 8px;
-  border: 2px solid #3ACADF;
+  border: 2px solid whitemoke;
   margin: auto;
   transition-duration: 0.4s;
-  color: whitesmoke;
+  color: black;
   max-width: 30%;
   transition-duration: 0.4s;
 }
