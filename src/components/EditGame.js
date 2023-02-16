@@ -1,9 +1,10 @@
 import Multiselect from "multiselect-react-dropdown";
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useParams, useHistory } from "react-router-dom";
 
 function EditGame({ onUpdateGame }) {
   const { id } = useParams();
+  const history = useHistory();
   const multiselectOptions = [
     "Sandbox",
     "Real-time strategy (RTS)",
@@ -55,15 +56,6 @@ function EditGame({ onUpdateGame }) {
 
   function submitEdit(e) {
     e.preventDefault();
-
-    const newSavedGameData = {
-      name: formData.name,
-      genres: formData.genres,
-      metacritic: parseInt(formData.metacritic),
-      esrb_rating: formData.newEsrbObj,
-      background_image: formData.background_image,
-    };
-
     const configObj = {
       method: "PATCH",
       headers: {
@@ -72,13 +64,13 @@ function EditGame({ onUpdateGame }) {
       },
       body: JSON.stringify(formData),
     };
-
     fetch(`http://localhost:3000/games/${id}`, configObj)
       .then((r) => r.json())
       .then((updatedGame) => {
         onUpdateGame(updatedGame);
         setFormData(initialState);
       });
+    history.push('/saved');
   }
 
   return (
