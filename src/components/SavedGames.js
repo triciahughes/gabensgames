@@ -72,7 +72,7 @@ function SavedGames({ games, handleAddGame, handleRemove }) {
   if (games.length == 0) {
     return (
       <>
-        <h1>Click "Save Game" To Save Games Here!</h1>
+        <h1 id="no-saved-games">Click "Save Game" To Save Games Here!</h1>
         <button 
           className="toggle-form" 
           onClick={handleClickToggle} 
