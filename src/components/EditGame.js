@@ -9,14 +9,18 @@ function EditGame({ onUpdateGame }) {
     "Sandbox",
     "Real-time strategy (RTS)",
     "Shooter",
-    "MOBA",
-    "Role-playing (RPG, ARPG, and More)",
-    "Simulation and sports",
-    "Puzzlers and party games",
-    "Action-adventure",
+    "Massively Multiplayer",
+    "RPG",
+    "Simulation",
+    "Puzzle",
+    "Action",
+    "Adventure",
     "Survival and horror",
     "Platformer",
-  ].map(x => { return {name: x}}); 
+    "Indie",
+  ].map((x) => {
+    return { name: x };
+  });
   const initialState = {
     name: "",
     genres: [],
@@ -37,22 +41,24 @@ function EditGame({ onUpdateGame }) {
   }, []);
 
   function handleChangeMultiselect(genresArr) {
-    const newGenres = genresArr.map(genreObj => { return { name: genreObj.name} });
+    const newGenres = genresArr.map((genreObj) => {
+      return { name: genreObj.name };
+    });
     setFormData({ ...formData, genres: newGenres });
   }
 
   function handleChange(e) {
     let { name, value } = e.target;
 
-    if (name === 'metacritic') {
+    if (name === "metacritic") {
       value = parseInt(value);
-    };
-    if (name == 'esrb_rating') {
-      value = { name: value};
-    };
+    }
+    if (name == "esrb_rating") {
+      value = { name: value };
+    }
 
     setFormData({ ...formData, [name]: value });
-  };
+  }
 
   function submitEdit(e) {
     e.preventDefault();
@@ -70,17 +76,13 @@ function EditGame({ onUpdateGame }) {
         onUpdateGame(updatedGame);
         setFormData(initialState);
       });
-    history.push('/saved');
+    history.push("/saved");
   }
 
   return (
     <div className="new-form-container">
       <img src={background_image}></img>
-      <form 
-        onSubmit={submitEdit} 
-        autoComplete="off"
-        className="new-form"
-      >
+      <form onSubmit={submitEdit} autoComplete="off" className="new-form">
         <label htmlFor="title">Game Title: </label>
         <input
           id="name"
@@ -93,7 +95,7 @@ function EditGame({ onUpdateGame }) {
         <label htmlFor="genres">Genres: </label>
         <Multiselect
           className="multiselect"
-          displayValue={'name'}
+          displayValue={"name"}
           isObject={true}
           options={multiselectOptions}
           selectedValues={genres}

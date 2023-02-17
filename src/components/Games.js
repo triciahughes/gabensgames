@@ -21,28 +21,21 @@ function Games({
 
   return (
     <>
-      {/* <button className="toggle-form" onClick={handleSort}>
-        Sort By Genre
-      </button> */}
       <form className="new-form">
-        <select
-          //id={formData.esrb_rating}
-          name="esrb_rating"
-          //value={formData.esrb_rating}
-          onChange={handleSortChange}
-        >
+        <select name="esrb_rating" onChange={handleSortChange}>
           <option>ALL</option>
           <option>Sandbox</option>
           <option>Real-time strategy (RTS)</option>
           <option>Shooter</option>
-          <option>MOBA</option>
-          <option>Role-playing (RPG, ARPG, and More)</option>
-          <option>Simulation and sports</option>
-          <option>Puzzlers and party games</option>
+          <option>Massively Multiplayer</option>
+          <option>RPG</option>
+          <option>Simulation</option>
+          <option>Puzzle</option>
           <option>Action</option>
           <option>Adventure</option>
           <option>Survival and horror</option>
           <option>Platformer</option>
+          <option>Indie</option>
         </select>
       </form>
       <div className="game-list-container">
