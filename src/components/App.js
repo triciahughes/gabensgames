@@ -63,10 +63,6 @@ function App() {
   }
 
   //////// Add && Remove Games && Update////////
-  const handleAddGame = (formData) => {
-    setSavedGames((savedGames) => [...savedGames, formData]);
-  };
-
   function handleRemove(id) {
     const newSavedGames = savedGames.filter((gameObj) => gameObj.id !== id);
     setSavedGames(newSavedGames);

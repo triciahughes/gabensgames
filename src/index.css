@@ -277,6 +277,10 @@ nav a {
   font-family: 'Trebuchet MS';
 }
 
+#no-saved-games {
+  color: whitesmoke;
+}
+
 /* Form */
 
 .new-form-container {
