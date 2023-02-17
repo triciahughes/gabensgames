@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Gaben's Game Gallery
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Summary
 
-## Available Scripts
+Gaben's Game Gallery is a wonderful source of modern video games and some of the studios which develop them. The Games page will display a list of 20 titles along with their genres, metacritic score, and ESRB rating. The user can click on the "Save Game" button to save it to their My Saved Games page. In the My Saved Games page, the user can add, edit, and delete their saved games. There is also a Developer page which displays popular developers and their popular titles.
 
-In the project directory, you can run:
+## Starting Up
+
+In the project directory, run:
+
+### `json-server --watch db.json`
+
+Hosts db.json on http://localhost:3000/games. \
+Contains user saved game data.
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3001) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## File Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### App.js
 
-### `npm run build`
+Fetches video game data and developer data from https://rawg.io/apidocs. \
+Fetches user saved data from JSON server at http://localhost:3000/games. \
+Filters games based off of search bar. \
+Filters games based off of selected category. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Parent of NavBar, Games, Developers, SavedGames & EditGame.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### DeveloperItem.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Item containing developer information.
 
-### `npm run eject`
+Child of Developers.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Developers.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Container component for DeveloperItem.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Child of App. \
+Parent of DeveloperItem.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### EditGame.js
 
-## Learn More
+Allows user to edit saved games.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Child of App.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### GameItem.js
 
-### Code Splitting
+Item containing video game information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Child of Games
 
-### Analyzing the Bundle Size
+### Games.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Container component for GameItem. 
 
-### Making a Progressive Web App
+Child of App. \
+Parent of GameItem.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### NavBar.js
 
-### Advanced Configuration
+Navigation Bar.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Child of App.
 
-### Deployment
+### SavedGames.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Displays user's saved games.
 
-### `npm run build` fails to minify
+Child of App.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

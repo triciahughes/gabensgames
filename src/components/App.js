@@ -72,7 +72,11 @@ function App() {
     setSavedGames(newSavedGames);
   }
 
-  const onUpdateGame = (updatedGame) => {
+  function handleAddGame(formData) {
+    setSavedGames((savedGames) => [...savedGames, formData]);
+  };
+
+  function onUpdateGame(updatedGame) {
     const updatedGameList = savedGames.map((oldGame) => {
       if (updatedGame.id === oldGame.id) {
         return updatedGame;
@@ -83,7 +87,7 @@ function App() {
     setSavedGames(updatedGameList);
   };
 
-  const completeEditing = () => {
+  function completeEditing() {
     setGameId(null);
   };
 

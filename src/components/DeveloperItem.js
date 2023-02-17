@@ -1,9 +1,6 @@
 function DeveloperItem({ dev }) {
 const { name, games, games_count, image_background } = dev;
 
-const gameTitles = games.map(gameObj => gameObj.name);
-const gamesString = Array.from(gameTitles).join(' - ');
-
   return (
     <li>
       <div className="card dev-card" style={{'backgroundImage': `url(${image_background})`}}>
