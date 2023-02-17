@@ -8,6 +8,10 @@ Gaben's Game Gallery is a wonderful source of modern video games and some of the
 
 In the project directory, run:
 
+### `npm install`
+
+Installs dependencies.
+
 ### `json-server --watch db.json`
 
 Hosts db.json on http://localhost:3000/games. \
