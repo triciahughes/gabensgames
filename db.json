@@ -1,91 +1,19 @@
 {
-  "games": [
+  "posts": [
     {
-      "name": "Grand Theft Auto v",
-      "id": 3498,
-      "genres": [
-        {
-          "name": "Action"
-        },
-        {
-          "name": "Adventure"
-        }
-      ],
-      "esrb_rating": {
-        "id": 4,
-        "name": "Mature",
-        "slug": "mature"
-      },
-      "metacritic": 92,
-      "background_image": "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
-    },
-    {
-      "name": "Portal 2",
-      "id": 4200,
-      "genres": [
-        {
-          "id": 2,
-          "name": "Shooter",
-          "slug": "shooter",
-          "games_count": 61790,
-          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-        },
-        {
-          "id": 7,
-          "name": "Puzzle",
-          "slug": "puzzle",
-          "games_count": 98617,
-          "image_background": "https://media.rawg.io/media/games/4cb/4cb855e8ef1578415a928e53c9f51867.png"
-        }
-      ],
-      "esrb_rating": {
-        "id": 2,
-        "name": "Everyone 10+",
-        "slug": "everyone-10-plus"
-      },
-      "metacritic": 95,
-      "background_image": "https://media.rawg.io/media/games/328/3283617cb7d75d67257fc58339188742.jpg"
-    },
-    {
-      "name": "Destiny 2",
-      "id": 32,
-      "genres": [
-        {
-          "id": 4,
-          "name": "Action",
-          "slug": "action",
-          "games_count": 174823,
-          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-        },
-        {
-          "id": 2,
-          "name": "Shooter",
-          "slug": "shooter",
-          "games_count": 61790,
-          "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
-        },
-        {
-          "id": 3,
-          "name": "Adventure",
-          "slug": "adventure",
-          "games_count": 134244,
-          "image_background": "https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg"
-        },
-        {
-          "id": 59,
-          "name": "Massively Multiplayer",
-          "slug": "massively-multiplayer",
-          "games_count": 3132,
-          "image_background": "https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg"
-        }
-      ],
-      "esrb_rating": {
-        "id": 3,
-        "name": "Teen",
-        "slug": "teen"
-      },
-      "metacritic": 82,
-      "background_image": "https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg"
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
     }
-  ]
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
