@@ -6,6 +6,7 @@ from sqlalchemy.exc import IntegrityError
 from werkzeug.exceptions import NotFound, Unauthorized
 from config import app, db, api
 from flask_cors import CORS
+from models import User
 
 CORS(app)
 
