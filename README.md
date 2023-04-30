@@ -6,7 +6,7 @@ Gaben's Game Gallery is a wonderful source of modern video games and some of the
 
 ## Starting Up
 
-In the project directory, run:
+In the `/client` directory, run:
 
 ### `npm install`
 
