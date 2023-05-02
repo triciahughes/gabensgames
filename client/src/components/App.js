@@ -12,6 +12,7 @@ import { Switch, Route, useHistory } from "react-router-dom";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
+  const [user, setUser] = useState({});
   const [games, setGames] = useState([]);
   const [savedGames, setSavedGames] = useState([]);
   const [devs, setDevs] = useState([]);
@@ -23,6 +24,14 @@ function App() {
   //////// Data Fetching ///////
   useEffect(() => {
     history.push("/games");
+
+    fetch("/authroized").then((res) => {
+      if (res.ok) {
+        res.json().then((userData) => {
+          setUser(userData);
+        });
+      }
+    });
 
     fetch(`https://api.rawg.io/api/games?key=${API_KEY}`)
       .then((r) => r.json())
@@ -36,6 +45,8 @@ function App() {
       .then((r) => r.json())
       .then((data) => setSavedGames(data));
   }, []);
+
+  console.log(user);
 
   //////// Search Bar ////////
   function handleSearchChange(e) {
@@ -105,39 +116,39 @@ function App() {
         handleSearchChange={handleSearchChange}
         searchInput={searchInput}
       />
-      <Switch>
-        <Route path="/games">
-          <Games
-            games={sortFilter}
-            savedGames={savedGames}
-            handleSave={handleSave}
-            handleSortChange={handleSortChange}
-          />
-        </Route>
-        <Route path="/developers">
-          <Developers devs={filteredDevList} />
-        </Route>
-        <Route path="/saved">
-          <SavedGames
-            games={filteredSaveGameList}
-            handleRemove={handleRemove}
-            handleAddGame={handleAddGame}
-          />
-        </Route>
-        <Route path="/saved:id/edit">
-          <EditGame
-            gameId={gameId}
-            completeEditing={completeEditing}
-            onUpdateGame={onUpdateGame}
-          />
-        </Route>
-        <Route path="/signin">
-          <Signin />
-        </Route>
-        <Route path="/signup">
-          <Signup />
-        </Route>
-      </Switch>
+      <Route path="/signin">
+        <Signin setUser={setUser} />
+      </Route>
+      <Route path="/signup">
+        <Signup />
+      </Route>
+      {/* <Switch> */}
+      <Route path="/games">
+        <Games
+          games={sortFilter}
+          savedGames={savedGames}
+          handleSave={handleSave}
+          handleSortChange={handleSortChange}
+        />
+      </Route>
+      <Route path="/developers">
+        <Developers devs={filteredDevList} />
+      </Route>
+      <Route path="/saved">
+        <SavedGames
+          games={filteredSaveGameList}
+          handleRemove={handleRemove}
+          handleAddGame={handleAddGame}
+        />
+      </Route>
+      <Route path="/saved:id/edit">
+        <EditGame
+          gameId={gameId}
+          completeEditing={completeEditing}
+          onUpdateGame={onUpdateGame}
+        />
+      </Route>
+      {/* </Switch> */}
     </div>
   );
 }

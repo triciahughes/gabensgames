@@ -4,9 +4,11 @@ from flask import Flask, request, session, make_response, jsonify, abort, render
 from flask_restful import Resource
 from sqlalchemy.exc import IntegrityError
 from werkzeug.exceptions import NotFound, Unauthorized
-from config import app, db, api
+# from config import app, db, api
 from flask_cors import CORS
 from models import User
+# Local imports
+from config import app, db, api
 
 CORS(app)
 
@@ -15,10 +17,8 @@ CORS(app)
 def index(id=0):
     return render_template("index.html")
 
-# Local imports
-from config import app, db, api
 
-api = Flask(__name__)
+# api = Flask(__name__)
 
 class Signin(Resource):
     def post(self):
@@ -42,6 +42,24 @@ class Signin(Resource):
             return response
         return {'error' : "Invalid Username or Password"}, 401
 
+class AuthorizedSession(Resource):
+
+    def get(self):
+
+        user = User.query.filter(User.id == session.get('user_id')).first()
+
+        if user:
+
+            response = make_response(
+                jsonify(user.to_dict()),
+                200
+            )
+            return response
+        
+        print("Did not find user.")
+
+        return {'error': '401 Unauthorized'}, 401
+
 class Signup(Resource):
 
     def post(self):
@@ -50,6 +68,8 @@ class Signup(Resource):
 
         new_user = User(
 
+            first_name=data['first_name'],
+            last_name=data['last_name'],
             username=data['username']
         )
 
@@ -68,4 +88,5 @@ class Signup(Resource):
         return response
 
 api.add_resource(Signin, '/signin')
+api.add_resource(AuthorizedSession, '/authorized')
 api.add_resource(Signup, '/signup')
