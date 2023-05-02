@@ -48,10 +48,10 @@ const Signin = ({ setUser }) => {
       <div>
         <h3>Please Sign In</h3>
         <Link to="/signup">
-          <h2 className="noaccount">Don't have an account? Sign up!</h2>
+          <h2>Don't have an account? Sign up!</h2>
         </Link>
-        {error["error"] ? <p className="error">{error["error"]}</p> : null}
-        <form onSubmit={formik.handleSubmit} className="signup">
+        {error["error"] ? <p>{error["error"]}</p> : null}
+        <form onSubmit={formik.handleSubmit}>
           <label>
             Username:
             <input
@@ -60,9 +60,7 @@ const Signin = ({ setUser }) => {
               value={formik.values.username}
               onChange={formik.handleChange}
             />
-            {formik.errors["email"] ? (
-              <p className="error">{formik.errors["username"]}</p>
-            ) : null}
+            {formik.errors["email"] ? <p>{formik.errors["username"]}</p> : null}
           </label>
           <br />
           <label>
@@ -74,12 +72,11 @@ const Signin = ({ setUser }) => {
               onChange={formik.handleChange}
             />
             {formik.errors["password"] ? (
-              <p className="error">{formik.errors["password"]}</p>
+              <p>{formik.errors["password"]}</p>
             ) : null}
           </label>
           <br />
           <input type="submit" value="Sign In" />
-          <div></div>
         </form>
       </div>
     </>
